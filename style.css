@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;500;700");
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300; /* if you want the light version */
+  color: #151515;
+  background-color: #fafafa;
+}
+
+h1 {
+  color: #0b5394;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  color: #3d85c6;
+  padding-bottom: 0.25rem;
+}
+
+h3 {
+  font-weight: 100;
+  font-size: 1.25rem;
+  padding-top: 0.25rem;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+ul.inline-list > li {
+  display: inline;
+  padding: 1.5rem;
+}
+
+li > div > span {
+  color:#bf9000;
+  padding-right: 1rem ;
+}
+
+li > div > span:not(:last-child) {
+  border-right: 1px solid #bf9000 ;
+}
+
+a {
+  text-decoration: none;
+  color:#0b5394;
+}
+
+i {
+  color:#bf9000;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+i:hover {
+  color:#3d85c6;
+  transition: 0.5s ease;
+}
+
+.btn-primary {
+  background-color: #bf9000;
+  border: #af8000;
+}
+
+.bolb-mask {
+  -webkit-mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M70.2,-22.1C79.4,5.5,67.3,40.8,44.4,56.3C21.4,71.8,-12.3,67.6,-35.3,50.4C-58.4,33.3,-70.7,3.1,-63.1,-22.3C-55.4,-47.8,-27.7,-68.6,1.4,-69.1C30.5,-69.5,61,-49.6,70.2,-22.1Z' transform='translate(100 100)'/></svg>");
+  mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M70.2,-22.1C79.4,5.5,67.3,40.8,44.4,56.3C21.4,71.8,-12.3,67.6,-35.3,50.4C-58.4,33.3,-70.7,3.1,-63.1,-22.3C-55.4,-47.8,-27.7,-68.6,1.4,-69.1C30.5,-69.5,61,-49.6,70.2,-22.1Z' transform='translate(100 100)'/></svg>");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.card {
+  padding: 2rem;
+  margin: 3rem 3rem 0 3rem;
+  border: none;
+  box-shadow: #151515;
+  width: 45vw;
+  min-width: 500px;
+}
+
+.card:last-child {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
+
+  ul.inline-list > li {
+    display: inline;
+    padding: 0.5rem;
+  }
+
+  li > div > span:not(:last-child) {
+    border-right: none ;
+  }
+
+  .card {
+    min-width: 320px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+
+}
