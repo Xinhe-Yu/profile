@@ -46,15 +46,9 @@ h2.code {
     }
 }
 
-@media (min-width: 830px) {
-  .code p {
-    font-size: 1.25rem;
-  }
-}
-
 @media (min-width: 1028px) {
   .code p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
   }
 }

@@ -132,7 +132,7 @@ li > div > span:not(:last-child) {
 
 @media (min-width: 992px) {
   body {
-    font-size: 1.55rem;
+    font-size: 1.25rem;
   }
 
   .container {
