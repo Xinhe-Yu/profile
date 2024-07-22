@@ -20,14 +20,21 @@
   color: #6c99bb
 }
 
-.code p {
-  font-size: 0.85rem;
-  line-height: 1.15;
-  margin-bottom: 0;
-  }
-
 .monospace {
   font-family: monospace;
+}
+
+.code p {
+  font-size: 0.78rem;
+  }
+
+.code-tight p {
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.code-loose p {
+  line-height: 1.75;
 }
 
 .code span {
@@ -35,18 +42,30 @@
   white-space: normal;
 }
 
-h2.code {
+h2.monospace {
   font-style: italic;
   color: gray;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 440px) {
   .code p {
-    font-size: 1rem;
+    font-size:0.85rem;
+  }
+}
+
+@media (min-width: 530px) {
+  .code p {
+    font-size:1rem;
+  }
+}
+
+@media (min-width: 639px) {
+  .code p {
+    font-size: 1.15rem;
     }
 }
 
-@media (min-width: 1028px) {
+@media (min-width: 700px) {
   .code p {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;

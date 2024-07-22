@@ -76,7 +76,7 @@ u {
 }
 
 .container {
-  width: 80vw;
+  width: 100%;
 }
 
 ul.inline-list > li {
@@ -85,11 +85,6 @@ ul.inline-list > li {
 
 li > div > span:not(:last-child) {
   border-right: none ;
-}
-
-.card {
-  min-width: 320px;
-  border-radius: 1rem;
 }
 
 .btn-primary {
@@ -110,8 +105,10 @@ li > div > span:not(:last-child) {
   padding: 2rem;
   margin: 3rem 3rem 0 3rem;
   border: none;
-  width: 50vw;
+  width: 80vw;
   min-width: 20rem;
+  max-width: 45rem;
+  border-radius: 1rem;
 }
 
 .card:last-child {
@@ -120,14 +117,15 @@ li > div > span:not(:last-child) {
 
 
 @media (min-width: 576px) {
-
+.container {
+  width: 80vw;
+}
 }
 
 @media (min-width: 768px) {
   h2 {
     font-size: 1.5rem;
   }
-
   }
 
 @media (min-width: 992px) {
@@ -138,7 +136,6 @@ li > div > span:not(:last-child) {
   .container {
     width: 60rem;
   }
-
 
 li > div > span {
   color:#bf9000;
