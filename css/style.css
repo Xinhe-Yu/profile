@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;500;700");
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300; /* if you want the light version */
   color: #151515;
-  background-color: #fafafa;
+  background: rgb(152,206,255);
+background: linear-gradient(245deg, rgb(240, 246, 252) 25%, rgb(255, 255, 247) 100%);
+
 }
 
 h1 {
@@ -68,6 +69,10 @@ i:hover {
   transition: 0.5s ease;
 }
 
+u {
+  font-family: monospace;
+
+}
 .btn-primary {
   background-color: #bf9000;
   border: #af8000;
@@ -107,7 +112,6 @@ i:hover {
   }
 
   ul.inline-list > li {
-    display: inline;
     padding: 0.5rem;
   }
 
