@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;500;700");
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +10,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300; /* if you want the light version */
-  color: #151515;
-  background: rgb(152,206,255);
-background: linear-gradient(245deg, rgb(240, 246, 252) 25%, rgb(255, 255, 247) 100%);
-
+  background: #2e2e2e;
+  background: linear-gradient(245deg, rgb(0, 11, 23) 25%, rgb(31, 31, 0) 100%);
 }
 
 h1 {
@@ -26,6 +25,7 @@ h1 {
 h2 {
   color: #3d85c6;
   padding-bottom: 0.25rem;
+  font-size: 1.25rem;
 }
 
 h3 {
@@ -73,14 +73,33 @@ u {
   font-family: monospace;
 
 }
+
+.container {
+  width: 80vw;
+}
+
+ul.inline-list > li {
+  padding: 0.5rem;
+}
+
+li > div > span:not(:last-child) {
+  border-right: none ;
+}
+
+.card {
+  min-width: 320px;
+}
+
 .btn-primary {
   background-color: #bf9000;
   border: #af8000;
 }
 
+
+
 .bolb-mask {
-  -webkit-mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M70.2,-22.1C79.4,5.5,67.3,40.8,44.4,56.3C21.4,71.8,-12.3,67.6,-35.3,50.4C-58.4,33.3,-70.7,3.1,-63.1,-22.3C-55.4,-47.8,-27.7,-68.6,1.4,-69.1C30.5,-69.5,61,-49.6,70.2,-22.1Z' transform='translate(100 100)'/></svg>");
-  mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M70.2,-22.1C79.4,5.5,67.3,40.8,44.4,56.3C21.4,71.8,-12.3,67.6,-35.3,50.4C-58.4,33.3,-70.7,3.1,-63.1,-22.3C-55.4,-47.8,-27.7,-68.6,1.4,-69.1C30.5,-69.5,61,-49.6,70.2,-22.1Z' transform='translate(100 100)'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M43.8 -76.4C56.7 -68.5 66.9 -56.5 73.7 -43.1C80.6 -29.7 84 -14.8 84.9 0.5C85.8 15.8 84 31.7 77.3 45.4C70.7 59.1 59.1 70.7 45.4 78.1C31.7 85.5 15.8 88.8 0.3 88.2C-15.2 87.6 -30.3 83.2 -43.6 75.5C-56.9 67.9 -68.3 56.9 -77.4 43.8C-86.4 30.7 -93.2 15.3 -93.4 -0.1C-93.5 -15.5 -87 -31 -78.4 -45C-69.9 -59 -59.2 -71.5 -45.8 -79.1C-32.3 -86.7 -16.2 -89.3 -0.3 -88.8C15.5 -88.2 31 -84.4 43.8 -76.46' transform='translate(100 100)'/></svg>");
+  mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M43.8 -76.4C56.7 -68.5 66.9 -56.5 73.7 -43.1C80.6 -29.7 84 -14.8 84.9 0.5C85.8 15.8 84 31.7 77.3 45.4C70.7 59.1 59.1 70.7 45.4 78.1C31.7 85.5 15.8 88.8 0.3 88.2C-15.2 87.6 -30.3 83.2 -43.6 75.5C-56.9 67.9 -68.3 56.9 -77.4 43.8C-86.4 30.7 -93.2 15.3 -93.4 -0.1C-93.5 -15.5 -87 -31 -78.4 -45C-69.9 -59 -59.2 -71.5 -45.8 -79.1C-32.3 -86.7 -16.2 -89.3 -0.3 -88.8C15.5 -88.2 31 -84.4 43.8 -76.46' transform='translate(100 100)'/></svg>");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
@@ -89,42 +108,88 @@ u {
   padding: 2rem;
   margin: 3rem 3rem 0 3rem;
   border: none;
-  box-shadow: #151515;
-  width: 45vw;
-  min-width: 500px;
+  width: 50vw;
+  min-width: 20rem;
 }
 
 .card:last-child {
   margin-bottom: 3rem;
 }
 
-@media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
-  .container {
-    width: 700px;
-  }
+.code p {
+font-size: 0.85rem;
+line-height: 1.15;
+margin-bottom: 0;
+font-family: monospace;
 }
 
-@media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
-  .container {
-    width: 300px;
-  }
-
-  ul.inline-list > li {
-    padding: 0.5rem;
-  }
-
-  li > div > span:not(:last-child) {
-    border-right: none ;
-  }
-
-  .card {
-    min-width: 320px;
-  }
+.code span {
+  display: inline;
+  white-space: normal;
 }
 
-@media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
+.white {
+  color: #d6d6d6
+}
+.yellow {
+  color: #e5b567
+}
+.green {
+  color: #b4e273
+}
+.orange {
+  color: #e87d3e
+}
+.purple {
+  color: #9e86c8
+}
+.pink {
+  color: #b05279
+}
+.blue {
+  color: #6c99bb
+}
+
+@media (min-width: 700px) {
+  .code p {
+    font-size: 1rem;
+    }
+}
+
+@media (min-width: 810px) {
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .code p {
+    font-size: 1.25rem;
+    }
+
+  }
+
+@media (min-width: 1028px) {
+  body {
+    font-size: 1.7rem;
+  }
+  .container {
+    width: 750px;
+  }
+  .code p {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+li > div > span {
+  color:#bf9000;
+  padding-right: 1rem ;
+}
+
+li > div > span:not(:last-child) {
+  border-right: 1px solid #bf9000 ;
+}
+.code p {
+  font-size: 1.75rem;
+  }
 
 }
