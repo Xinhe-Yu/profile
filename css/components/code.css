@@ -1,0 +1,60 @@
+.white {
+  color: #d6d6d6
+}
+.yellow {
+  color: #e5b567
+}
+.green {
+  color: #b4e273
+}
+.orange {
+  color: #e87d3e
+}
+.purple {
+  color: #9e86c8
+}
+.pink {
+  color: #cb648f
+}
+.blue {
+  color: #6c99bb
+}
+
+.code p {
+  font-size: 0.85rem;
+  line-height: 1.15;
+  margin-bottom: 0;
+  }
+
+.monospace {
+  font-family: monospace;
+}
+
+.code span {
+  display: inline;
+  white-space: normal;
+}
+
+h2.code {
+  font-style: italic;
+  color: gray;
+}
+
+@media (min-width: 700px) {
+  .code p {
+    font-size: 1rem;
+    }
+}
+
+@media (min-width: 810px) {
+  .code p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1028px) {
+  .code p {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -12,10 +12,13 @@
 </head>
 
 <body>
-  <div class="container text-center">
+  <div class="container">
     <div class="row justify-content-center">
-      <div class="card text-white bg-dark ">
-        <div class="code">
+
+      <div class="card text-white bg-dark">
+        <div class="code monospace">
+          <p class="monospace" style="margin:0"><i class="fa-brands fa-python"></i> xinhe_yu.py</p>
+          <hr>
           <p class="d-flex justify-content-start">
             <span class="pink me-2">Class</span> <span class="green">HomePage</span>:<br>
           </p>
@@ -38,119 +41,107 @@
           <p class="d-flex justify-content-start">
             <span class="px-3"></span><span class="px-3 d-xl-block"></span>
             <span class="green">print</span>(<span class="yellow">"Art History PhD"</span>)
+            <br><br>
+          </p>
+
+          <p class="monospace"><span class="pink">import</span> requests</p>
+          <p class="monospace">MY_PORTOFOLIO <span class="green">=</span> requests.get(<a href="https://xinhe.de/"
+              target="_blank" class="yellow">'<u>https://xinhe.de</u>'</a>)
+
           </p>
         </div>
-        <img src="./images/profile.jpg" alt="Xinhe's profile photo" style="width:15rem" class="bolb-mask mx-auto">
+        <img src="./images/profile.jpg" alt="Xinhe's profile photo" style="width:16rem" class="bolb-mask mx-auto my-3">
 
-        <h2>Looking for a junior web developer position</h2>
-        <p>Deeply passionate about coding, with a strong interest in code
-          structure and algorithms.</p>
+        <p>Looking for a <strong class="pink monospace">Junior Web Developer</strong> !</p>
+        <p>Deeply passionate about coding, with a strong interest in <strong class="monospace green">code
+            structure</strong>
+          and <strong class="monospace green">algorithms</strong></p>
 
-        <div>
-          <a href="https://xinhe.de/" class="btn btn-primary">Visit my portofolio at <u>xinhe.de</u></a>
+
+      </div>
+
+
+      <div class="card text-white bg-dark shadow-lg">
+        <h2 class="code">#Programming Skills</h2>
+        <div class="monospace">
+          <p>programming_languages <span class="green">=</span>\<br>
+            [
+            <span class="yellow">"Python<i class="fa-brands fa-xl fa-python"></i>"</span>,
+            <span class="yellow">"HTML5<i class="fa-brands fa-xl fa-html5"></i>"</span>,
+            <span class="yellow">"CSS3<i class="fa-brands fa-xl fa-css3"></i>"</span>,
+            <span class="yellow">"JS<i class="fa-brands fa-xl fa-js"></i>"</span>,
+            <span class="yellow">"Ruby"</span>
+            ]
+          </p>
+
+          <p>frameworks_and_libraries <span class="green">=</span>\<br>
+            [
+            <span class="yellow">"react.js<i class="fa-brands fa-xl fa-react"></i>"</span>,
+            <span class="yellow">"Bootstrap<i class="fa-brands fa-xl fa-bootstrap"></i>"</span>,
+            <span class="yellow">"tailwind CSS"</span>,
+            <span class="yellow">"Rails"</span>
+            ]
+          </p>
+
+          <p>development_tools <span class="green">=</span>\<br>
+            [
+            <span class="yellow">"git<i class="fa-brands fa-xl fa-git"></i>"</span>,
+            <span class="yellow">"Docker<i class="fa-brands fa-xl fa-docker"></i>"</span>,
+            <span class="yellow">"npm<i class="fa-brands fa-xl fa-npm"></i>"</span>,
+            <span class="yellow">"JEST"</span>,
+            <span class="yellow">"RSpec"</span>
+            ]
+          </p>
+
+          <p>databases <span class="green">=</span>\<br>
+
+            [
+            <span class="yellow">"SQLite"</span>,
+            <span class="yellow">"PostgreSQL"</span>
+            ]
+          </p>
+
+          <p>other_tools <span class="green">=</span>\<br>
+            [
+            <span class="yellow">"Linux<i class="fa-brands fa-xl fa-linux"></i>"</span>,
+            <span class="yellow">"LaTeX"</span>,
+            <span class="yellow">"Figma<i class="fa-brands fa-xl fa-figma"></i>"</span>
+            ]
+          </p>
         </div>
       </div>
 
-
       <div class="card text-white bg-dark shadow-lg">
-        <h2>Programming Skills</h2>
-        <ul>
-          <li>
-            <h3>Programming languages:</h3>
-            <div class="row row-cols-auto justify-content-center">
-              <span class="col">Python
-                <i class="fa-brands fa-xl fa-python"></i>
-              </span>
-              <span class="col">Html5
-                <i class="fa-brands fa-xl fa-html5"></i>
-              </span>
-              <span class="col">CSS3
-                <i class="fa-brands fa-xl fa-css3"></i>
-              </span>
-              <span class="col">JS
-                <i class="fa-brands fa-xl fa-js"></i>
-              </span>
-              </span class="col">
-              <span class="col">Ruby</span>
-            </div>
-          </li>
-          <li>
-            <h3>Frameworks and Libraries:</h3>
-            <div class="row row-cols-auto justify-content-center">
-              <span class="col">react.js
-                <i class="fa-brands fa-xl fa-react"></i>
-              </span>
-              <span class="col">Bootstrap
-                <i class="fa-brands fa-xl fa-bootstrap"></i>
-              </span>
-              <span class="col">tailwind CSS</span>
-              <span class="col">Rails</span>
-            </div>
-          </li>
-          <li>
-            <h3>Development Tools:</h3>
-            <div class="row row-cols-auto justify-content-center">
-              <span class="col">git
-                <i class="fa-brands fa-xl fa-git"></i>
-              </span>
-              <span class="col">Docker
-                <i class="fa-brands fa-xl fa-docker"></i>
-              </span>
-              <span class="col">npm
-                <i class="fa-brands fa-xl fa-npm"></i>
-              </span>
-              <span class="col">JEST</span>
-              <span class="col">RSpec</span>
-            </div>
-          </li>
-          <li>
-            <h3>Databases:</h3>
-            <div class="row row-cols-auto justify-content-center">
-              <span class="col">SQLite</span>
-              <span class="col">PostgreSQL</span>
-            </div>
-          </li>
-          <li>
-            <h3>Other Tools:</h3>
-            <div class="row row-cols-auto justify-content-center">
-              <span class="col">Linux
-                <i class="fa-brands fa-xl fa-linux"></i>
-              </span>
-              <span class="col">LateX</span>
-              <span class="col">Figma
-                <i class="fa-brands fa-xl fa-figma"></i>
-              </span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="card text-white bg-dark shadow-lg">
-        <h2 class="mb-4">Social Links</h2>
+        <h2 class="mb-4 code">#Social Links</h2>
         <ul class="inline-list">
           <li>
             <a href="https://github.com/Xinhe-Yu" target="_blank">
-              <i class="fa-brands fa-xl fa-github fa-2xl"></i>
+              <i class="fa-brands fa-xl fa-github fa-2xl yellow"></i>
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/xinhe-yu-21750418a/" target="_blank">
-              <i class="fa-brands fa-xl fa-linkedin fa-2xl"></i>
+              <i class="fa-brands fa-xl fa-linkedin fa-2xl yellow"></i>
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com/xiiiiiinhe" target="_blank">
-              <i class="fa-brands fa-xl fa-square-instagram fa-2xl"></i>
+              <i class="fa-brands fa-xl fa-square-instagram fa-2xl yellow"></i>
             </a>
           </li>
           <li>
             <a href="mailto: xinhe.yu.dsa@gmail.com">
-              <i class="fa-solid fa-envelope fa-2xl"></i>
+              <i class="fa-solid fa-envelope fa-2xl yellow"></i>
             </a>
           </li>
         </ul>
       </div>
+
     </div>
+  </div>
+
+
+  </div>
   </div>
 </body>
 
