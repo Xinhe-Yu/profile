@@ -61,7 +61,8 @@ ul.solution li::before{
   height: 360px;
   border-radius: 16px;
   position:relative;
-  display:flex;
+  display:grid;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
 }
 
