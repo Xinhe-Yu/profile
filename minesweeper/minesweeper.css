@@ -1,18 +1,104 @@
 /* CSS classes you can use on your table td to display the relevant tile */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body.dark {
+  transition: 0.5s linear;
+  background-color: #151515;
+  color: #fafafa;
+}
+
+body.light {
+  transition: 0.5s linear;
+  background-color: #fafafa;
+  color: #151515;
+}
 
 .container {
+  margin: 2rem auto;
   display: grid;
   justify-content: center;
+  max-width: 720px;
+}
+
+.icon {
+  display: grid;
+  justify-self: end;
+  height: 40px;
+  position: relative;
+  background-color: #333;
+}
+
+.icon input {
+  display: none;
+}
+
+.icon label {
+  transition: 0.5s linear;
+  position: absolute;
+  left: -56px;
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #333;
+  border: 1px solid white;
+  display: block;
+  box-shadow: inset 0 0 8px #ff4757, 0 0 12px #ff4757;
+}
+
+.icon label::before {
+  transition: 0.5s linear;
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4757;
+  left: 56px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px #ff4757, 0 0 16px #ff4757;
+}
+
+.icon i {
+  transition: 0.5s linear;
+  font-size: 28px;
+  position: absolute;
+  left: -40px;
+  top: 8px;
+  color: #333;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2),
+  1px -1px 0 rgba(0, 0, 0, 0.2),
+  -1px 1px 0 rgba(0, 0, 0, 0.2),
+  -1px -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon input:checked ~ i {
+  color: #add6ff;
+  color: white;
+  text-shadow: 0 0 2px #add6ff, 0 0 4px #add6ff, 0 0 8px #add6ff;
+}
+
+.icon input:checked ~ label {
+  background-color: #ccc;
+  box-shadow: inset 0 0 8px #add6ff, 0 0 16px #add6ff;
+}
+
+.icon input:checked ~ label::before {
+  background: white;
+  box-shadow: 0 0 8px #add6ff, 0 0 16px #add6ff;
 }
 
 #emoji {
   cursor: pointer;
-  border: 3px solid rgba(0,0,0,0.5);
+  border: 3px solid #424242;
   padding: 8px;
   border-radius: 4px;
 }
 h1 {
-  text-align: center;
+  margin: 2rem 0;  text-align: center;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -30,7 +116,7 @@ td.question {
   background: url('img/question.svg');
 }
 td.mine {
-  background: url('img/mine.png');
+  background: url('img/mine.png'), white;
 }
 td.mine-neighbour-1 {
   background: url('img/1.svg');

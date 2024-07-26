@@ -6,12 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minesweeper</title>
   <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
   <link rel="stylesheet" href="./minesweeper.css">
 </head>
 
-<body>
+<body class="dark">
   <div class="container">
-    <h1>minesweeper <span id="emoji"></span></h1>
+    <div class="icon">
+      <input type="checkbox" id="toggle">
+      <label for="toggle"></label>
+      <i class="fa-solid fa-lightbulb"></i>
+    </div>
+    <h1>minesweeper <span id="emoji"></h1>
     <table>
       <tbody id="minesweeper">
         <!-- Dear Student, would you write a bunch of HTML here or generate
@@ -23,6 +29,7 @@
 
   <!-- Including your code -->
   <script type="module" src="./lib/minesweeper.js"></script>
+  <script type="module" src="./lib/lightToggle.js"></script>
 </body>
 
 </html>
