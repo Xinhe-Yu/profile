@@ -1,11 +1,6 @@
-
 const tableElement = document.getElementById("minesweeper");
 const emojiElement = document.getElementById("emoji");
-let gameTurn = true;
-let correctFlags = 0;
 
-emojiElement.innerText = "🙂";
-const jsConfetti = new JSConfetti();
 const directions = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]];
 const classList = ['opened', 'mine-neighbour-1', 'mine-neighbour-2', 'mine-neighbour-3', 'mine-neighbour-4', 'mine-neighbour-5', 'mine-neighbour-6', 'mine-neighbour-7', 'mine-neighbour-8', 'mine'];
 
@@ -33,9 +28,7 @@ const generateUniqueCoordinates = () => {
   return Array.from(coordinates).map(coord => JSON.parse(coord));
 };
 
-const isValidCoord = (x, y) => {
-  return x >= 0 && x < 10 && y >= 0 && y < 10;
-};
+const isValidCoord = (x, y) => { return x >= 0 && x < 10 && y >= 0 && y < 10; };
 
 const generatemap = () => {
   const array = Array.from({ length: 10 }, () => Array(10).fill(0));
@@ -45,9 +38,7 @@ const generatemap = () => {
     array[y][x] = "*";
     directions.forEach(([dx, dy]) => {
       const [newX, newY] = [x + dx, y + dy];
-      if (isValidCoord(newX, newY) && typeof array[newY][newX] === 'number') {
-        array[newY][newX] += 1;
-      }
+      if (isValidCoord(newX, newY) && typeof array[newY][newX] === 'number') { array[newY][newX] += 1; }
     });
   });
   console.log(array);
@@ -55,27 +46,19 @@ const generatemap = () => {
 };
 
 const initialize = () => {
+  emojiElement.innerText = "🙂";
   generateTable();
-  return generatemap();
+  return [generatemap(), true, 0];
 };
 
-let array = initialize();
+let [array, gameTurn, correctFlags] = initialize();
 
-const unopened = (element) => {
-  return element.classList.contains("unopened");
-};
-const flagged = (element) => {
-  return element.classList.contains("flagged");
-};
-const whichElement = (x, y) => {
-  return tableElement.querySelectorAll("td")[y * 10 + x];
-};
-const whichCoord = (element) => {
-  return [element.cellIndex, element.parentElement.rowIndex];
-};
+const unopened = (element) => { return element.classList.contains("unopened"); };
+const flagged = (element) => { return element.classList.contains("flagged"); };
+const whichElement = (x, y) => { return tableElement.querySelectorAll("td")[y * 10 + x]; };
+const whichCoord = (element) => { return [element.cellIndex, element.parentElement.rowIndex]; };
 
 const win = () => {
-  console.log(correctFlags);
   if (!document.querySelector(".unopened") && correctFlags === 10) {
     emojiElement.innerText = "😎";
     gameTurn = false;
@@ -90,9 +73,7 @@ const reveal = (x, y) => {
     if (array[y][x] === 0) {
       directions.forEach(([dx, dy]) => {
         const [newX, newY] = [x + dx, y + dy];
-        if (isValidCoord(newX, newY) && unopened(whichElement(newX, newY))) {
-          reveal(newX, newY);
-        }
+        if (isValidCoord(newX, newY) && unopened(whichElement(newX, newY))) { reveal(newX, newY); }
       });
     }
   }
@@ -100,15 +81,12 @@ const reveal = (x, y) => {
 
 emojiElement.addEventListener('click', () => {
   if (emojiElement.innerText === "😣" || emojiElement.innerText === "😎") {
-    gameTurn = true;
     emojiElement.innerText = "🙂";
-    generateTable();
-    array = generatemap();
-    correctFlags = 0;
+    [array, gameTurn, correctFlags] = initialize();
   }
 });
 
-tableElement.addEventListener("click", (event) => {
+const handleLeftClick = (event) => {
   if (gameTurn && event.target.tagName === "TD" && unopened(event.target)) {
     const [x, y] = whichCoord(event.target);
     if (typeof array[y][x] === 'number') {
@@ -119,13 +97,11 @@ tableElement.addEventListener("click", (event) => {
       emojiElement.innerText = "😣";
       gameTurn = false;
     }
-
     win();
   }
-});
+};
 
-tableElement.addEventListener("contextmenu", (event) => {
-  event.preventDefault();
+const handleRightClick = (event) => {
   if (gameTurn && event.target.tagName === "TD" && (unopened(event.target) || flagged(event.target))) {
     event.target.classList.toggle('unopened');
     event.target.classList.toggle('flagged');
@@ -133,4 +109,27 @@ tableElement.addEventListener("contextmenu", (event) => {
     correctFlags += (flagged(event.target) ? 1 : -1) * (array[y][x] === "*" ? 1 : -1);
     win();
   }
+};
+
+tableElement.addEventListener("mouseup", (event) => {
+  if (event.button === 0) {
+    handleLeftClick(event);
+  } else if (event.button === 2) {
+    handleRightClick(event);
+  }
+});
+
+tableElement.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
+
+let pressTimer;
+tableElement.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+  pressTimer = setTimeout(() => { handleRightClick(event); }, 400);
+});
+
+tableElement.addEventListener('touchend', (event) => {
+  clearTimeout(pressTimer);
+  handleLeftClick(event);
 });
