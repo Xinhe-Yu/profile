@@ -22,6 +22,7 @@ body.light {
 }
 
 .container {
+  position: relative;
   margin: 2rem auto;
   display: grid;
   justify-content: center;
@@ -171,8 +172,20 @@ table #minesweeper td {
   background-size: cover;
 }
 
+#result {
+  position: absolute;
+  top: 105%;
+  left: 30%;
+  display: none;
+  grid-template-columns: 1fr 16px 96px;
+}
 @media (min-width: 1024px) {
   #indice {
     display:none;
+  }
+  #result {
+    position: absolute;
+    top: 25%;
+    left: 75%;
   }
 }

@@ -52,16 +52,41 @@ const initialize = () => {
 };
 
 let [array, gameTurn, correctFlags] = initialize();
+let [started, victory] = [false, 0];
+let startTime, timeElapsed, bestTime;
 
 const unopened = (element) => { return element.classList.contains("unopened"); };
 const flagged = (element) => { return element.classList.contains("flagged"); };
 const whichElement = (x, y) => { return tableElement.querySelectorAll("td")[y * 10 + x]; };
 const whichCoord = (element) => { return [element.cellIndex, element.parentElement.rowIndex]; };
+const timeElement = document.getElementById('time');
+const victoryElement = document.getElementById('win');
+const resultElement = document.getElementById('result');
+const bestElement = document.getElementById('best');
+
+const formatMilliseconds = (ms) => {
+  const milliseconds = (ms % 1000).toString().padStart(3, '0');
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+  const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+  return minutes + ":" + seconds + "," + milliseconds;
+}
 
 const win = () => {
   if (!document.querySelector(".unopened") && correctFlags === 10) {
     emojiElement.innerText = "😎";
-    gameTurn = false;
+    gameTurn = started = false;
+    timeElapsed = new Date() - startTime;
+    victory += 1;
+    timeElement.innerText = formatMilliseconds(timeElapsed);
+    if (!bestTime || bestTime > timeElapsed) {
+      bestTime = timeElapsed;
+      bestElement.innerText = timeElement.innerText;
+    }
+    victoryElement.innerText = victory;
+    if (resultElement.style.display === "") {
+      resultElement.style.display = "grid";
+    }
   }
 };
 
@@ -87,6 +112,7 @@ emojiElement.addEventListener('click', () => {
 });
 
 const handleLeftClick = (event) => {
+  if (!started) { started = true; startTime = new Date() }
   if (gameTurn && event.target.tagName === "TD" && unopened(event.target)) {
     const [x, y] = whichCoord(event.target);
     if (typeof array[y][x] === 'number') {
@@ -95,13 +121,15 @@ const handleLeftClick = (event) => {
       event.target.classList.remove('unopened');
       event.target.classList.add(classList[9]);
       emojiElement.innerText = "😣";
-      gameTurn = false;
+      gameTurn = started = false;
+      timeElapsed = startTime - new Date();
     }
     win();
   }
 };
 
 const handleRightClick = (event) => {
+  if (!started) { started = true; startTime = new Date() }
   if (gameTurn && event.target.tagName === "TD" && (unopened(event.target) || flagged(event.target))) {
     event.target.classList.toggle('unopened');
     event.target.classList.toggle('flagged');
