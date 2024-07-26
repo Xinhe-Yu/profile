@@ -4,6 +4,7 @@
 @import url('components/card.css');
 @import url('components/code.css');
 @import url('components/color.css');
+@import url('components/img.css');
 
 * {
   margin: 0;
@@ -52,13 +53,10 @@ u {
   border: #af8000;
 }
 
-.bolb-mask {
-  -webkit-mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M43.8 -76.4C56.7 -68.5 66.9 -56.5 73.7 -43.1C80.6 -29.7 84 -14.8 84.9 0.5C85.8 15.8 84 31.7 77.3 45.4C70.7 59.1 59.1 70.7 45.4 78.1C31.7 85.5 15.8 88.8 0.3 88.2C-15.2 87.6 -30.3 83.2 -43.6 75.5C-56.9 67.9 -68.3 56.9 -77.4 43.8C-86.4 30.7 -93.2 15.3 -93.4 -0.1C-93.5 -15.5 -87 -31 -78.4 -45C-69.9 -59 -59.2 -71.5 -45.8 -79.1C-32.3 -86.7 -16.2 -89.3 -0.3 -88.8C15.5 -88.2 31 -84.4 43.8 -76.46' transform='translate(100 100)'/></svg>");
-  mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M43.8 -76.4C56.7 -68.5 66.9 -56.5 73.7 -43.1C80.6 -29.7 84 -14.8 84.9 0.5C85.8 15.8 84 31.7 77.3 45.4C70.7 59.1 59.1 70.7 45.4 78.1C31.7 85.5 15.8 88.8 0.3 88.2C-15.2 87.6 -30.3 83.2 -43.6 75.5C-56.9 67.9 -68.3 56.9 -77.4 43.8C-86.4 30.7 -93.2 15.3 -93.4 -0.1C-93.5 -15.5 -87 -31 -78.4 -45C-69.9 -59 -59.2 -71.5 -45.8 -79.1C-32.3 -86.7 -16.2 -89.3 -0.3 -88.8C15.5 -88.2 31 -84.4 43.8 -76.46' transform='translate(100 100)'/></svg>");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+.sample li > div{
+  display:grid;
+  justify-content: center;
 }
-
 
 @media (min-width: 576px) {
 }
