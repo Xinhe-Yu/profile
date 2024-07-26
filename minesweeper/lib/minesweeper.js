@@ -7,14 +7,11 @@ emojiElement.innerText = "🙂";
 const directions = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]];
 const classList = ['opened', 'mine-neighbour-1', 'mine-neighbour-2', 'mine-neighbour-3', 'mine-neighbour-4', 'mine-neighbour-5', 'mine-neighbour-6', 'mine-neighbour-7', 'mine-neighbour-8', 'mine'];
 
-
 const generateTable = () => {
   let table = "";
   for (let i = 0; i < 10; i += 1) {
     table += "<tr>";
-    for (let j = 0; j < 10; j += 1) {
-      table += '<td class="unopened"></td>';
-    }
+    for (let j = 0; j < 10; j += 1) { table += '<td class="unopened"></td>'; }
     table += "</tr>";
   } tableElement.innerHTML = table;
 };
@@ -31,7 +28,6 @@ const generateUniqueCoordinates = () => {
     const coord = generateRandomCoordinate();
     coordinates.add(JSON.stringify(coord));
   }
-
   return Array.from(coordinates).map(coord => JSON.parse(coord));
 };
 
@@ -58,7 +54,6 @@ const generatemap = () => {
 
 const initialize = () => {
   generateTable();
-  correctFlags = 0;
   return generatemap();
 };
 
@@ -76,6 +71,7 @@ const whichElement = (x, y) => {
 const whichCoord = (element) => {
   return [element.cellIndex, element.parentElement.rowIndex];
 };
+
 const win = () => {
   console.log(correctFlags);
   if (!document.querySelector(".unopened") && correctFlags === 10) {
@@ -106,6 +102,7 @@ emojiElement.addEventListener('click', () => {
     emojiElement.innerText = "🙂";
     generateTable();
     array = generatemap();
+    correctFlags = 0;
   }
 });
 
