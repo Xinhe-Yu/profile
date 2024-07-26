@@ -1,4 +1,3 @@
-console.log("toggle load")
 const checkbox = document.getElementById('toggle');
 const body = document.querySelector('body');
 

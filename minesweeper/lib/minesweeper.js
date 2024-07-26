@@ -1,9 +1,11 @@
+
 const tableElement = document.getElementById("minesweeper");
 const emojiElement = document.getElementById("emoji");
 let gameTurn = true;
 let correctFlags = 0;
 
 emojiElement.innerText = "🙂";
+const jsConfetti = new JSConfetti();
 const directions = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]];
 const classList = ['opened', 'mine-neighbour-1', 'mine-neighbour-2', 'mine-neighbour-3', 'mine-neighbour-4', 'mine-neighbour-5', 'mine-neighbour-6', 'mine-neighbour-7', 'mine-neighbour-8', 'mine'];
 
@@ -117,6 +119,7 @@ tableElement.addEventListener("click", (event) => {
       emojiElement.innerText = "😣";
       gameTurn = false;
     }
+
     win();
   }
 });

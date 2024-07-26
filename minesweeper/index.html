@@ -17,7 +17,7 @@
       <label for="toggle"></label>
       <i class="fa-solid fa-lightbulb"></i>
     </div>
-    <h1>minesweeper <span id="emoji"></h1>
+    <h1>minesweeper <span id="emoji"></span></h1>
     <table>
       <tbody id="minesweeper">
         <!-- Dear Student, would you write a bunch of HTML here or generate
@@ -30,6 +30,29 @@
   <!-- Including your code -->
   <script type="module" src="./lib/minesweeper.js"></script>
   <script type="module" src="./lib/lightToggle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <script>
+    const emojis = [
+      ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+      ['🦄', '🍆', '💦', '🌶️'],
+      ['💖', '🤩', '🥰', '🥳'],
+      ['🐶', '🐱', '🐕', '🐈‍⬛', '🐞']
+    ]
+    const emojiElement = document.getElementById("emoji");
+    const checkEmoji = (mutationList, observer) => {
+      const desiredEmoji = "😎";
+      if (emojiElement.innerText === desiredEmoji) {
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti({
+          emojis: emojis[Math.floor(Math.random() * 4)], emojiSize: 48,
+          confettiNumber: 80,
+        });
+      }
+    };
+    const config = { characterData: true, characterDataOldValue: true, subtree: true, childList: true };
+    const observer = new MutationObserver(checkEmoji);
+    observer.observe(emojiElement, config);
+  </script>
 </body>
 
 </html>
