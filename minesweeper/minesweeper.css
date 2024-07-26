@@ -2,6 +2,11 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body.dark {
@@ -20,7 +25,8 @@ body.light {
   margin: 2rem auto;
   display: grid;
   justify-content: center;
-  max-width: 720px;
+  max-width: 800px;
+  min-width: 340px;
 }
 
 .icon {
@@ -99,8 +105,14 @@ body.light {
 }
 
 h1 {
-  margin: 2rem 0;  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  margin: 2rem 0;
+  text-align: center;
+
+}
+
+#indice {
+  padding: 8px;
+  text-align: center;
 }
 
 td.unopened {
@@ -148,6 +160,8 @@ td.mine-neighbour-8 {
 table #minesweeper {
   margin: auto;
   margin-top: 3em;
+  width: 320px;
+  height: 320px;
   border: 1px solid #999;
   border-collapse: collapse;
 }
@@ -155,4 +169,10 @@ table #minesweeper td {
   width: 32px;
   height: 32px;
   background-size: cover;
+}
+
+@media (min-width: 1024px) {
+  #indice {
+    display:none;
+  }
 }
