@@ -1,0 +1,33 @@
+
+.yellow {
+  color: #e5b567
+}
+a.yellow:hover {
+  color: #ffeb12;
+}
+
+.blue {
+  color: #3d85c6
+}
+a.blue:hover {
+  color: #6fa8dc
+}
+
+.white {
+  color: #d6d6d6
+}
+.green {
+  color: #b4e273
+}
+.orange {
+  color: #e87d3e
+}
+.purple {
+  color: #9e86c8
+}
+.pink {
+  color: #cb648f
+}
+.gray {
+  color: gray
+}

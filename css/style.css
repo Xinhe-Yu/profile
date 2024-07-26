@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;500;700");
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+@import url('components/card.css');
 @import url('components/code.css');
+@import url('components/color.css');
 
 * {
   margin: 0;
@@ -15,16 +18,6 @@ body {
   background: linear-gradient(245deg, rgb(0, 11, 23) 25%, rgb(31, 31, 0) 100%);
 }
 
-h2 {
-  color: #3d85c6;
-  padding-bottom: 0.25rem;
-  font-size: 1.25rem;
-}
-
-.text-light-blue {
-  color: #3d85c6;
-}
-
 ul {
   padding-left: 0;
   list-style: none;
@@ -32,24 +25,11 @@ ul {
 
 ul.inline-list > li {
   display: inline;
-  padding: 1.5rem;
-}
-
-li > div > span {
-  color:#bf9000;
-  padding-right: 1rem ;
-}
-
-li > div > span:not(:last-child) {
-  border-right: 1px solid #bf9000 ;
+  padding: 0.5rem;
 }
 
 a {
   text-decoration: none;
-}
-
-a.yellow:hover {
-  color: #ffed2c;
 }
 
 i {
@@ -58,7 +38,7 @@ i {
   padding: 0 0 0 0.5rem;
 }
 
-i:hover {
+a i:hover {
   color:#3d85c6;
   transition: 0.5s ease;
 }
@@ -67,21 +47,10 @@ u {
   font-family: monospace;
 }
 
-
-ul.inline-list > li {
-  padding: 0.5rem;
-}
-
-li > div > span:not(:last-child) {
-  border-right: none ;
-}
-
 .btn-primary {
   background-color: #bf9000;
   border: #af8000;
 }
-
-
 
 .bolb-mask {
   -webkit-mask-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><path d='M43.8 -76.4C56.7 -68.5 66.9 -56.5 73.7 -43.1C80.6 -29.7 84 -14.8 84.9 0.5C85.8 15.8 84 31.7 77.3 45.4C70.7 59.1 59.1 70.7 45.4 78.1C31.7 85.5 15.8 88.8 0.3 88.2C-15.2 87.6 -30.3 83.2 -43.6 75.5C-56.9 67.9 -68.3 56.9 -77.4 43.8C-86.4 30.7 -93.2 15.3 -93.4 -0.1C-93.5 -15.5 -87 -31 -78.4 -45C-69.9 -59 -59.2 -71.5 -45.8 -79.1C-32.3 -86.7 -16.2 -89.3 -0.3 -88.8C15.5 -88.2 31 -84.4 43.8 -76.46' transform='translate(100 100)'/></svg>");
@@ -90,31 +59,8 @@ li > div > span:not(:last-child) {
   mask-repeat: no-repeat;
 }
 
-.card {
-  padding: 1rem;
-  margin: 1rem 1rem 0 1rem;
-  border: none;
-  width: 80vw;
-  min-width: 20rem;
-  max-width: 45rem;
-  border-radius: 1rem;
-}
-
-.card:last-child {
-  margin-bottom: 3rem;
-}
-
 
 @media (min-width: 576px) {
-  .card {
-    padding: 2rem;
-    margin: 3rem 3rem 0 3rem;
-    border: none;
-    width: 80vw;
-    min-width: 20rem;
-    max-width: 45rem;
-    border-radius: 1rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -125,16 +71,7 @@ li > div > span:not(:last-child) {
 
 @media (min-width: 992px) {
   body {
-    font-size: 1.25rem;
+    font-size: 20px;
   }
-
-li > div > span {
-  color:#bf9000;
-  padding-right: 1rem ;
-}
-
-li > div > span:not(:last-child) {
-  border-right: 1px solid #bf9000 ;
-}
 
 }

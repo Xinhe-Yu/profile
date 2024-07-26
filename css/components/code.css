@@ -1,31 +1,14 @@
-.white {
-  color: #d6d6d6
-}
-.yellow {
-  color: #e5b567
-}
-.green {
-  color: #b4e273
-}
-.orange {
-  color: #e87d3e
-}
-.purple {
-  color: #9e86c8
-}
-.pink {
-  color: #cb648f
-}
-.blue {
-  color: #6c99bb
-}
-
 .monospace {
   font-family: monospace;
 }
 
-.code p {
-  font-size: 0.78rem;
+h2.monospace {
+  font-style: italic;
+  color: gray;
+}
+
+.code p, a {
+  font-size: 0.8rem;
   }
 
 .code-tight p {
@@ -42,31 +25,26 @@
   white-space: normal;
 }
 
-h2.monospace {
-  font-style: italic;
-  color: gray;
-}
-
 @media (min-width: 440px) {
-  .code p {
+  .code p, a {
     font-size:0.85rem;
   }
 }
 
 @media (min-width: 530px) {
-  .code p {
+  .code p, a {
     font-size:1rem;
   }
 }
 
 @media (min-width: 639px) {
-  .code p {
+  .code p, a {
     font-size: 1.15rem;
     }
 }
 
 @media (min-width: 700px) {
-  .code p {
+  .code p, a {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
   }
