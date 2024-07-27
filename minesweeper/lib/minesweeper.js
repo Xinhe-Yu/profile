@@ -2,36 +2,36 @@ const tableElement = document.getElementById("minesweeper");
 const emojiElement = document.getElementById("emoji");
 
 const directions = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]];
-const classList = ['opened', 'mine-neighbour-1', 'mine-neighbour-2', 'mine-neighbour-3', 'mine-neighbour-4', 'mine-neighbour-5', 'mine-neighbour-6', 'mine-neighbour-7', 'mine-neighbour-8', 'mine'];
+const classList = ['opened', 'mine-neighbour-1', 'mine-neighbour-2', 'mine-neighbour-3', 'mine-neighbour-4',
+  'mine-neighbour-5', 'mine-neighbour-6', 'mine-neighbour-7', 'mine-neighbour-8', 'mine'];
+const gridSize = 10;
 
 const generateTable = () => {
   let table = "";
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < gridSize; i += 1) {
     table += "<tr>";
-    for (let j = 0; j < 10; j += 1) { table += '<td class="unopened"></td>'; }
+    for (let j = 0; j < gridSize; j += 1) { table += '<td class="unopened"></td>'; }
     table += "</tr>";
   } tableElement.innerHTML = table;
 };
 
 const generateRandomCoordinate = () => {
-  const x = Math.floor(Math.random() * 10);
-  const y = Math.floor(Math.random() * 10);
-  return [x, y];
+  return [Math.floor(Math.random() * gridSize), Math.floor(Math.random() * gridSize)];
 };
 
 const generateUniqueCoordinates = () => {
   const coordinates = new Set();
-  while (coordinates.size < 10) {
+  while (coordinates.size < gridSize) {
     const coord = generateRandomCoordinate();
     coordinates.add(JSON.stringify(coord));
   }
   return Array.from(coordinates).map(coord => JSON.parse(coord));
 };
 
-const isValidCoord = (x, y) => { return x >= 0 && x < 10 && y >= 0 && y < 10; };
+const isValidCoord = (x, y) => { return x >= 0 && x < gridSize && y >= 0 && y < gridSize; };
 
 const generatemap = () => {
-  const array = Array.from({ length: 10 }, () => Array(10).fill(0));
+  const array = Array.from({ length: gridSize }, () => Array(gridSize).fill(0));
   const mineList = generateUniqueCoordinates();
   mineList.forEach((minCoord) => {
     const [x, y] = [minCoord[0], minCoord[1]];
@@ -67,7 +67,7 @@ const bestElement = document.getElementById('best');
 const formatMilliseconds = (ms) => {
   const milliseconds = (ms % 1000).toString().padStart(3, '0');
   const totalSeconds = Math.floor(ms / 1000);
-  const minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+  const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
   const seconds = (totalSeconds % 60).toString().padStart(2, '0');
   return minutes + ":" + seconds + "," + milliseconds;
 }
@@ -82,8 +82,7 @@ const win = () => {
     if (!bestTime || bestTime > timeElapsed) {
       bestTime = timeElapsed;
       bestElement.innerText = timeElement.innerText;
-    }
-    victoryElement.innerText = victory;
+    } victoryElement.innerText = victory;
     if (resultElement.style.display === "") {
       resultElement.style.display = "grid";
     }
@@ -112,7 +111,7 @@ emojiElement.addEventListener('click', () => {
 });
 
 const handleLeftClick = (event) => {
-  if (!started) { started = true; startTime = new Date() }
+  if (!started && gameTurn) { started = true; startTime = new Date() }
   if (gameTurn && event.target.tagName === "TD" && unopened(event.target)) {
     const [x, y] = whichCoord(event.target);
     if (typeof array[y][x] === 'number') {
@@ -123,13 +122,12 @@ const handleLeftClick = (event) => {
       emojiElement.innerText = "😣";
       gameTurn = started = false;
       timeElapsed = startTime - new Date();
-    }
-    win();
+    } win();
   }
 };
 
 const handleRightClick = (event) => {
-  if (!started) { started = true; startTime = new Date() }
+  if (!started && gameTurn) { started = true; startTime = new Date() }
   if (gameTurn && event.target.tagName === "TD" && (unopened(event.target) || flagged(event.target))) {
     event.target.classList.toggle('unopened');
     event.target.classList.toggle('flagged');
@@ -146,7 +144,6 @@ tableElement.addEventListener("mouseup", (event) => {
     handleRightClick(event);
   }
 });
-
 tableElement.addEventListener("contextmenu", (event) => {
   event.preventDefault();
 });
@@ -156,7 +153,6 @@ tableElement.addEventListener('touchstart', (event) => {
   event.preventDefault();
   pressTimer = setTimeout(() => { handleRightClick(event); }, 400);
 });
-
 tableElement.addEventListener('touchend', (event) => {
   clearTimeout(pressTimer);
   handleLeftClick(event);
