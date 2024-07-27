@@ -30,12 +30,29 @@ body.light {
   min-width: 340px;
 }
 
-.icon {
+.title {
   display: grid;
-  justify-self: end;
+  grid-template-columns: 80px 1fr 72px;
+  height: 80px;
+  align-items: center;
+}
+
+.title > div {
+  justify-self: center;
+}
+
+h2 {
+  text-shadow: 1px 1px 0 rgba(128, 128, 128, 0.5),
+  1px -1px 0 rgba(128, 128, 128, 0.5),
+  -1px 1px 0 rgba(128, 128, 128, 0.5),
+  -1px -1px 0 rgba(128, 128, 128, 0.5);
+  text-align: center;
+}
+
+.icon {
   height: 40px;
+  width: 80px;
   position: relative;
-  background-color: #333;
 }
 
 .icon input {
@@ -45,7 +62,6 @@ body.light {
 .icon label {
   transition: 0.5s linear;
   position: absolute;
-  left: -56px;
   width: 80px;
   height: 40px;
   border-radius: 20px;
@@ -73,7 +89,7 @@ body.light {
   transition: 0.5s linear;
   font-size: 28px;
   position: absolute;
-  left: -40px;
+  left: 16px;
   top: 8px;
   color: #333;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2),
@@ -100,15 +116,12 @@ body.light {
 
 #emoji {
   cursor: pointer;
+  font-size: 36px;
   border: 3px solid #424242;
-  padding: 16px 8px 8px 8px;
+  padding: 8px;
+  width: 50px;
+  height: 50px;
   border-radius: 4px;
-}
-
-h1 {
-  margin: 2rem 0;
-  text-align: center;
-
 }
 
 #indice {
@@ -157,7 +170,6 @@ td.mine-neighbour-8 {
   background: url('img/8.svg');
 }
 
-/* Positioning the Minesweep table and make sure the cells are square */
 table #minesweeper {
   margin: auto;
   margin-top: 3em;
@@ -180,6 +192,9 @@ table #minesweeper td {
   grid-template-columns: 1fr 16px 96px;
 }
 @media (min-width: 1024px) {
+  .title {
+    margin-bottom: 8px;
+  }
   #indice {
     display:none;
   }
