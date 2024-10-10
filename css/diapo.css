@@ -94,14 +94,26 @@ ul.solution li::before{
 .page li p {
   font-size: 1rem;
 }
-.rainbow {
-  padding: 8px 12px 0 12px;
+
+section:nth-child(odd) .rainbow {
   background: linear-gradient(108deg, #FF7F3E, #f441a5, #ffeb3b, #FF7F3E);
-  background-size: 400%;
   animation: animate 8s linear infinite;
+  padding: 8px 12px 0 12px;
+  background-size: 400%;
   border-radius: 4px;
   font-size: inherit;
   font-family: inherit;
+}
+
+section:nth-child(even) .rainbow {
+  background: linear-gradient(108deg, #80c4e9, #4be7dc, #f9f871, #80c4e9);
+  animation: animate 8s linear infinite;
+  padding: 8px 12px 0 12px;
+  background-size: 400%;
+  border-radius: 4px;
+  font-size: inherit;
+  font-family: inherit;
+
 }
 
 @keyframes animate{
