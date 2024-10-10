@@ -9,6 +9,12 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+code {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
 .scroll-container {
   height: 100vh;
   overflow-y: scroll;
@@ -36,8 +42,6 @@ ul {
 }
 
 ul li {
-  padding: 16px;
-  display: flex;
   align-items: center;
 }
 
@@ -56,14 +60,17 @@ ul.solution li::before{
   z-index:1;
   background-color: #FFF6E9;
   margin: auto;
-  padding: 32px;
+  padding: 0 64px;
   width: 720px;
   height: 360px;
   border-radius: 16px;
   position:relative;
   display:grid;
-  grid-template-columns: 1fr 2fr;
   align-items: center;
+}
+
+.page-without-box {
+  background-color: transparent !important;
 }
 
 .page > h1 {
@@ -77,6 +84,16 @@ ul.solution li::before{
   font-size: inherit;
 }
 
+.page ol > li {
+  margin-bottom: 20px;
+}
+
+.page li > strong {
+  font-size: 1.25rem;
+}
+.page li p {
+  font-size: 1rem;
+}
 .rainbow {
   padding: 8px 12px 0 12px;
   background: linear-gradient(108deg, #FF7F3E, #f441a5, #ffeb3b, #FF7F3E);
