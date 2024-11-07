@@ -1,53 +1,70 @@
+## Introduction
+
+présenter une application web que j'ai développée, qui permet de consulter et d'analyser les historiques des Jeux Olympiques de manière interactive.
+
+Ma présentation sera divisée en trois parties principales :
+
+1. Je vous expliquerai l'objectif du projet, la structure des pages, ainsi que les technologies et les bibliothèques que j'ai utilisées pour le développement.
+
+2. Je vous montrerai les fonctionnalités de l'application à travers ses deux pages : la page d'accueil et la page de détail par pays.
+
+3. Je passerai en revue des extraits de code pour vous montrer comment j'ai implémenté certaines fonctionnalités clés.
+
+Enfin, je conclurai avec les bonnes pratiques que j'ai suivies, ainsi que des pistes d’amélioration et des développements futurs possibles pour ce projet.
+
 ## 1. Compréhension du projet et choix techniques
 ### Compréhension du projet
-Objectif du projet :
+#### Objectif du projet :
 Création d’un site web permettant aux utilisateurs de consulter les historiques des Jeux Olympiques (JO), à la fois de manière globale et par pays, avec des représentations visuelles sous forme de graphiques interactifs.
 
-Structure du site :
-Le site comporte deux pages principales :
+#### Structure du site :
+Le site comporte deux pages principales et chaque page contient une partie informative et une partie interactive :
 
 Page d’accueil :
 
-Partie informative : Présentation générale de l’application, affichant le contexte, le titre, ainsi que des statistiques globales sur les Jeux Olympiques.
-Partie interactive : Un graphique en forme de camembert permettant aux utilisateurs d’interagir pour obtenir des informations détaillées sur chaque pays. En cliquant sur un pays, l’utilisateur est redirigé vers une page détaillée dédiée à ce pays.
+Pour la page d'acceuil, la partie informative est une présentation générale de l’application, affichant le contexte, le titre, ainsi que des statistiques globales sur les JOs.
+Partie interactive : Un graphique en forme de camembert permettant aux utilisateurs d’interagir pour obtenir le nombre des médailles total de chaque pays. En cliquant sur un pays, l’utilisateur est redirigé vers une page détaillée dédiée à ce pays.
+
 Page de détail (par pays) :
+Concernant la page de détail, dans sa partie informative, on voit l'affichage du nom du pays sélectionné et présentation de quelques statistiques générales sur ses performances aux JO.
+Quant à la partie interactive : Un graphique linéaire représentant l’évolution du nombre de médailles au fil des années. Les utilisateurs peuvent passer le curseur sur le graphique pour voir les détails année par année. Un bouton permet de revenir facilement à la page d’accueil.
 
-Partie informative : Affichage du nom du pays sélectionné et présentation de quelques statistiques générales sur ses performances aux JO.
-Partie interactive : Un graphique linéaire représentant l’évolution du nombre de médailles au fil des années (axe X pour les années et axe Y pour le nombre de médailles). Les utilisateurs peuvent passer le curseur sur le graphique pour voir les détails année par année. Un bouton permet de revenir facilement à la page d’accueil.
-Maquette fournie :
-La maquette du site m’a été fournie et il est essentiel de la respecter scrupuleusement. Voici les principaux éléments de design à suivre :
+#### Maquette fournie :
+Comme La maquette du site m’a été fournie et il est important de la bien observer et de la respecter.
+Voici les principaux éléments de design à suivre :
 
-Couleur principale : Teal (#04838f).
-Bordure arrondie : Environ 8px (ou 0,5 rem).
-Disposition des cartes d’information : Utilisation du display: flex pour l’affichage.
-Icône de médaille : Présente dans une infobulle (tooltip).
-Police : Sans-serif.
+Couleur principale est un bleu canard (#04838f).
+La bordure est arrondie d'environ 8px (ou 0,5 rem).
+Les cartes d’information sont dans un boite de display: flex.
+Une icône de médaille est présente dans une infobulle (tooltip).
+À la fin, on emploie une police sans-serif.
 
 ### Choix techniques
 A. RxJS (Reactive Extensions for JavaScript) pour la gestion des programmes événementiels
+
 Avantages :
 
-Meilleure gestion des opérations asynchrones :
-RxJS simplifie la gestion des flux asynchrones complexes en traitant les événements comme des observables. Cela facilite le suivi et la gestion des séquences asynchrones.
+(Meilleure gestion des opérations asynchrones :)
+- RxJS simplifie la gestion des flux asynchrones en traitant les événements comme des observables.
 
-Opérateurs puissants et gestion d'erreurs intégrée :
-La bibliothèque propose des opérateurs performants tels que map, filter, mergeMap, switchMap, et intègre une gestion des erreurs robuste.
+(Opérateurs puissants et gestion d'erreurs intégrée :)
+- Elle propose des opérateurs performants et intègre une gestion des erreurs robuste.
 
-Intégration fluide avec Angular :
-RxJS est bien intégré dans l'écosystème Angular, ce qui facilite son utilisation dans les projets Angular.
+(Intégration fluide avec Angular :)
+RxJS est bien intégré dans l'écosystème Angular.
 
 Inconvénients :
 
 Risque de fuites de mémoire :
-Il est crucial de se désinscrire correctement des observables, faute de quoi cela peut entraîner des fuites de mémoire.
+Il est crucial de se désinscrire correctement des observables.
 
-Taille importante du bundle :
+Taille importante, comme elle est très puissante.
+
 Bien que puissante, la bibliothèque peut alourdir le projet en raison de sa taille.
 
 B. Ngx-charts pour les graphiques
 Avantages :
 
-Conçu pour Angular :
 Développé spécifiquement pour Angular, Ngx-charts offre une intégration profonde avec les fonctionnalités réactives d'Angular, comme la détection des changements.
 
 Interactions riches :
@@ -56,13 +73,10 @@ La bibliothèque prend en charge nativement les infobulles (tooltips), le zoom e
 Responsive :
 De nombreux graphiques sont réactifs par défaut et s’adaptent automatiquement à la taille de la fenêtre.
 
-Animations :
-Ngx-charts propose des animations par défaut agréables, bien que cela puisse parfois causer des problèmes.
-
 Problèmes et inconvénients :
 
 Support des animations :
-Pour que le graphique linéaire soit pleinement fonctionnel, il est nécessaire de fournir les animations (provideAnimations). Il y a toujours un avertissement lié aux animations, un problème qui reste ouvert à ce jour.
+Il y a toujours des avertissements (liés aux animations ou pas), problème qui restent ouvert à ce jour. Les superviseurs de cette libraires ne sont pas super réactifs aux issues liés aux avertissements, on voit ça dans leur répo github.
 
 ## 4. Conclusion
 
