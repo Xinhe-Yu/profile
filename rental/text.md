@@ -16,17 +16,17 @@ Ma mission était de développer l'application back-end pour Chatop Rental, une 
 
 L'application expose quatre endpoints principaux :
 
+Auth : Gère l'authentification et l'enregistrement des utilisateurs.
+
+User : Permet la récupération des informations de l’utilisateur.
+
 Rentals : Gère toutes les informations liées aux locations. C’est l'endpoint le plus complet, prenant en charge presque tous les verbes CRUD (sauf DELETE).
 
 Messages : Permet la communication entre le propriétaire et le locataire.
 
-Auth : Gère l'authentification et l'enregistrement des utilisateurs.
-
-User : Permet la gestion des utilisateurs (récupération des informations de l’utilisateur).
-
 Les endpoints Auth et User privilégient les verbes GET et POST pour l'enregistrement et l'authentification, tandis que Rentals couvre un éventail plus large d'opérations.
 
-En plus, en développant l'application back-end, le respect les critères de sécurité est très important.
+En plus, en développant l'application back-end, le respect des critères de sécurité est très important.
 
 Donc à part les endpoints, La sécurité est aussi un enjeu majeur. Afin de protéger les données et garantir l'intégrité des interactions, plusieurs mesures de sécurité ont été mises en place, ce qui comprend :
 
@@ -41,7 +41,7 @@ Spring Boot (Framework principal)
 Spring Boot permet un développement rapide et une intégration simplifiée des différents composants, tout en offrant une base stable pour des applications évolutives.
 
 Spring Data JPA
-Pour la gestion de la base de données, j'ai choisi Spring Data JPA qui facilite l'intégration avec MySQL et permet de travailler directement avec des entités Java, ce qui simplifie le processus de création, de lecture, de mise à jour et de suppression (CRUD) des données. Bien que pour l'instant la suppresion n'ait pas été demandée.
+Pour la gestion de la base de données, j'ai choisi Spring Data JPA qui facilite l'intégration avec MySQL et MySQL connector pour la communication des données.
 
 Springdoc OpenAPI
 Pour la documentation de l'API, j’ai utilisé Springdoc OpenAPI, qui génère automatiquement des documents OpenAPI et permet une visualisation interactive de l'API via Swagger UI.
@@ -83,6 +83,10 @@ Controllers : Les contrôleurs définissent les endpoints de l’API et traitent
 Repositories : Les repositories, fournis par Spring Data JPA, s'occupent de la communication avec la base de données. Ils permettent des opérations CRUD simplifiées et d'accéder aux données sans écrire de code SQL explicite. Par exemple, UserRepository permet de récupérer des utilisateurs par leurs attributs, comme le nom d’utilisateur ou l’ID.
 
 Services : Les services contiennent la logique métier de l’application. Ils agissent comme une couche intermédiaire entre les contrôleurs et les repositories. Par exemple, AuthService gère l'authentification, génère les tokens JWT et valide les informations de connexion, tandis que RentalService gère les opérations sur les locations, comme la création, la modification, et la consultation de données.
+
+Présentation de la documentation:
+ReadME
++ swagger UI
 
 ## Conclusion
 Bonnes pratiques appliquées :

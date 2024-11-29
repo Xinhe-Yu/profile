@@ -1,6 +1,6 @@
 ## Introduction
 
-C’est avec plaisir que je vous présente aujourd’hui les deux missions qui m’ont été confiées. La première consiste en une veille technologique, tandis que la seconde a pour objectif la création d’un document d’architecture pour un site e-commerce.
+J'ai le plaisir de vous présenter les deux missions qui m’ont été confiées. La première consiste en une veille technologique, tandis que la seconde a pour objectif la création d’un document d’architecture pour un site e-commerce.
 
 Ma présentation sera divisée en deux grandes parties, chacune consacrée à une de ces missions.
 
@@ -52,4 +52,6 @@ La librairie de composants visuels : identifier une solution permettant une conc
 Les paradigmes de programmation pour le front et le back : justifier les approches et pratiques choisies pour garantir un développement efficace, évolutif, et en phase avec les attentes techniques.
 
 ## Conclusion
-En résumé, tout au long de cette présentation, nous avons examiné les choix technologiques que j’ai faits pour répondre aux besoins du projet : la veille technologique sur des sujets clés tels que Java, Spring, JavaScript, Angular, et la réalisation du document d’architecture pour un site e-commerce. J’ai travaillé en m’appuyant sur une vision technique bien définie, en sélectionnant des technologies éprouvées et des paradigmes appropriés pour garantir la disponibilité, la rapidité, la réduction des coûts et l’évolutivité du site.
+En résumant, j'ai travaillé sur deux missions principales : une veille technologique pour suivre les évolutions des technologies Java et JavaScript, ainsi que la réalisation d'un document d'architecture pour un site e-commerce. Ces deux missions sont étroitement liées : la veille m’a permis d’identifier et de comprendre les solutions les plus adaptées et les plus récentes dans l’écosystème technologique, ce qui a directement influencé mes choix architecturaux.
+
+En adoptant une approche technique rigoureuse, j'ai pu intégrer les besoins exprimés par le client, tels que la disponibilité, la rapidité et l'évolutivité, tout en m'assurant que les technologies sélectionnées soient performantes, durables et en phase avec les tendances actuelles du développement logiciel.
