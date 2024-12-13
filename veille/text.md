@@ -31,6 +31,9 @@ Appliquer une vérification croisée des sources pour assurer leur crédibilité
 
 Cette veille me permettra de mieux comprendre les priorités et les directions prises par les développeurs et les entreprises dans ces écosystèmes. Elle vise également à identifier les innovations susceptibles d’améliorer les pratiques de développement ou d’enrichir les projets sur lesquels nous travaillons.
 
+### Présentation du dashboard
+
+
 ## Architecture
 ### Compréhension du projet
 

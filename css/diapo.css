@@ -33,8 +33,16 @@ section:nth-child(odd) {
   background-color: #FF7F3E;
 }
 
+section.xmas:nth-child(odd) {
+  background-color: #044400 !important;
+}
+
 section:nth-child(even) {
   background-color: #80C4E9;
+}
+
+section.xmas:nth-child(even) {
+  background-color: #790000 !important;
 }
 
 ul {
@@ -78,6 +86,10 @@ ul.solution li::before{
   font-size: 40px;
   position: absolute;
   top: -56px;
+}
+
+.xmas h1 {
+  color: #FFF6E9 !important;
 }
 
 .page > h1 i {
