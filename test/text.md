@@ -22,8 +22,7 @@ En plus, dans le back-end, les DTOs n'ont pas besoin d'être testés. Donc je n'
 
 ## 2. Démonstration
 ### Junit
-On lance les tests !
-mvn verify
+
 
 Avant d'entrer dans les détails, je voudrais d'abord mentionner la méthode pour implementer les tests unitaires, donc la méthode AAA (Arrange, Act, Assert), qui permet de structurer les tests de manière claire et efficace :
 
@@ -33,12 +32,15 @@ Act : Exécuter l’action ou la méthode à tester.
 
 Assert : Vérifier que les résultats obtenus correspondent aux résultats attendus, grâce à des assertions.
 
+On lance les tests !
+mvn verify
+
 Pour les tests unitaires du back-end, j’ai principalement testé trois catégories clés :
 
 #### Les services :
 
 Les services représentent la logique métier principale de l’application. J’ai écrit des tests pour vérifier que les fonctionnalités de chaque service fonctionnent correctement et indépendamment des autres couches.
-Par exemple, j’ai testé un service qui gère participation et dé-participation, annulations des utilisateurs à une session yoga. Pour chaque scénario le service il doit réagir correctement.
+Par exemple, j’ai testé un service qui gère participation et annulations des utilisateurs à une session yoga. Pour chaque scénario le service il doit réagir correctement.
 
 #### Les contrôleurs :
 
@@ -72,9 +74,10 @@ Maintenant les tests sont fini et on va aller voir les rapports générés.
 
 ### Jest
 
-npm run jest:coverage
 
 Après avoir présenté les tests pour le back-end, passons aux tests réalisés pour le front-end avec Jest.
+
+npm run jest:coverage
 
 #### Pour les composants Angular :
 
@@ -94,7 +97,6 @@ Ces tests vérifient la logique des services, comme la récupération ou le trai
 ### Cypress
 
 npm run e2e
-npm run cypress:run && npm run e2e:coverage
 
 Les tests end-to-end (E2E) visent à valider le bon fonctionnement de l’application dans son ensemble, en simulant des interactions réelles d’un utilisateur. Contrairement aux tests unitaires ou d’intégration, les tests E2E couvrent toute la chaîne, depuis l’interface utilisateur jusqu’à API. Cela permet de garantir que les différentes parties de l’application fonctionnent bien ensemble.
 
@@ -112,7 +114,7 @@ Tests pour la création et l’édition de sessions.
 
 Pour optimiser les tests et éviter de répéter les mêmes étapes dans plusieurs fichiers, j’ai préparé des commandes personnalisées dans le fichier support/commands.ts. Par exemple, la connexion utilisateur ou la navigation et d'autres actions courantes.
 
-
+npm run cypress:run && npm run e2e:coverage
 
 ## Conclusion
 bonnes pratiques:
