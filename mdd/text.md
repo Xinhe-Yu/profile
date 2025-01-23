@@ -1,107 +1,91 @@
 ## Introduction
 
-Aujourd'hui, j'ai le plaisir de vous présenter une application back-end que j'ai développée pour Chatop Rental. Cette application, construite avec le framework Spring, permet de répondre aux demandes de l'application web de Chatop Rental, tout en gérant les données de manière fluide et sécurisée en interaction avec une base de données MySQL.
+Aujourd'hui, j'ai le plaisir de vous présenter une application full-stack que j'ai développée pour Orion : Monde de dév (MDD), un réseau social vise à faciliter les connexions et la collaboration entre les développeurs.
 
-Ma présentation sera divisée en 4 parties :
-1. je vous expliquerai l'objectif du projet;
+Ma présentation sera structurée en quatre parties principales :
+1. je vous expliquerai ma compréhension du projet ;
 2. je parlerai des technologies et des bibliothèques que j'ai utilisées pour le développement.
-3. Je vous montrerais les fonctionnalités de l'application en interaction avec les pages web du front.
-4. Je passerai en revue des extraits de code pour vous montrer comment j'ai implémenté certaines fonctionnalités clés.
-
-Enfin, je conclurai avec les bonnes pratiques que j'ai suivies, ainsi que des pistes d’amélioration et des développements futurs possibles pour ce projet.
+3. Je vous montrerais les fonctionnalités de l'application en interaction avec les pages web.
+4. Je passerai en revue des extraits de code source pour vous montrer comment j'ai implémenté certaines fonctionnalités clés.
 
 ## 1. Compréhension du projet
+Ma tâche consistait à créer une plateforme en ligne dédiée aux développeurs. Le but principal était de construire une application full-stack en version MVP (minimum viable product) qui :
 
-Ma mission était de développer l'application back-end pour Chatop Rental, une plateforme de location. L'objectif principal était de répondre aux requêtes API déjà définies par l'équipe front-end.
+1. Respecte les exigences techniques fixées par Orion
+2. Intègre toutes les fonctionnalités détaillées dans le cahier des charges
+3. Suit les maquettes fournies pour le design
 
-L'application expose quatre endpoints principaux :
+### Contraintes techniques du projet
 
-Auth : Gère l'authentification et l'enregistrement des utilisateurs.
+Une des principales exigences était la séparation entre le back et le front. Ces deux parties communiquent via une API, avec un accent particulier mis sur la sécurité des échanges.
 
-User : Permet la récupération des informations de l’utilisateur.
+Les frameworks principaux ont été imposés dès le début du projet :
+Backend : JAVA avec le framework Spring
+Utilisation privilégiée des librairies natives de Spring pour assurer une cohérence et une performance optimale
+Frontend : TypeScript avec le framework Angular
 
-Rentals : Gère toutes les informations liées aux locations. C’est l'endpoint le plus complet, prenant en charge presque tous les verbes CRUD (sauf DELETE).
+L'utilisation de Git et GitHub était obligatoire pour la gestion du code source.
 
-Messages : Permet la communication entre le propriétaire et le locataire.
+Ces contraintes techniques ont été intégrées dès la phase de conception du projet. J'ai veillé à respecter la structure initiale mise en place par ma collègue, assurant ainsi une continuité et une cohérence dans le développement de l'application.
 
-Les endpoints Auth et User privilégient les verbes GET et POST pour l'enregistrement et l'authentification, tandis que Rentals couvre un éventail plus large d'opérations.
+### fonctionnalités demandées
 
-En plus, en développant l'application back-end, le respect des critères de sécurité est très important.
+Les fonctionnalités demandées pour le forum se répartissent en trois grands domaines.
 
-Donc à part les endpoints, La sécurité est aussi un enjeu majeur. Afin de protéger les données et garantir l'intégrité des interactions, plusieurs mesures de sécurité ont été mises en place, ce qui comprend :
+Commençons par la gestion des utilisateurs, qui comprend les fonctions essentielles d'inscription, de connexion et de déconnexion. Une fois connectés, les utilisateurs peuvent consulter et modifier leur profil.
 
-Authentification obligatoire sur toutes les routes,
-Cryptage des mots de passe,
-Sécurisation des informations sensibles de l'application.
+Passons maintenant à la gestion des abonnements. Les utilisateurs ont la possibilité de consulter tous les thèmes disponibles sur le forum. Ils peuvent ensuite s'abonner ou se désabonner des thèmes depuis les pages dédiées.
 
-Pour cette partie, je vais détailler dans la partie suivante, où je parle des librairies que j'ai choisies pour renforcer la sécurité.
+Le troisième domaine concerne la gestion des articles. Les utilisateurs peuvent consulter tous les articles liés aux thèmes auxquels ils sont abonnés. Ils ont également accès aux détails de chaque article. De plus, ils ont la possibilité de les commenter ou d'ajouter leurs propres articles.
+
+En complément de ces fonctionnalités principales, plusieurs exigences spécifiques ont été intégrées. Toutes les pages du site doit être résponsive, s'adaptant ainsi à différents appareils. Une attention particulière a été portée à la sécurité, avec l'implémentation de mots de passe robustes. Pour garantir l'intégrité des contenus, l'application attribue automatiquement l'auteur et la date lors de la création d'articles ou de commentaires.
+
+### maquettes fournie
+Les maquettes pour l'ensemble du projet ont été fournies, couvrant un total de huit pages. Chaque page est déclinée en deux versions : une pour les ordinateurs et une pour les appareils mobiles.
+
+Le design adopte une approche minimaliste. La couleur principale choisie est le violet, en harmonie avec le logo du MDD. Ma collègue a déjà configuré le thème en utilisant la variante "deeppurple" de Material Design.
 
 ## 2. choix technique
-Spring Boot (Framework principal)
-Spring Boot permet un développement rapide et une intégration simplifiée des différents composants, tout en offrant une base stable pour des applications évolutives.
+Passons maintenant aux choix techniques que j'ai effectués pour ce projet. J'ai utilisé le template fourni par l'entreprise. Ce document détaille non seulement mes choix, mais inclut également les liens vers les documentations officielles et les justifications pour chaque sélection.
 
-Spring Data JPA
-Pour la gestion de la base de données, j'ai choisi Spring Data JPA qui facilite l'intégration avec MySQL et MySQL connector pour la communication des données.
+Au total, j'ai documenté les deux frameworks principaux imposé, en expliquant pourquoi j'ai changé les versions, différentes aux ceux qui sont été définis lors de l'initialisation.
 
-Springdoc OpenAPI
-Pour la documentation de l'API, j’ai utilisé Springdoc OpenAPI, qui génère automatiquement des documents OpenAPI et permet une visualisation interactive de l'API via Swagger UI.
+J'ai expliqué les choix que j'ai faits pour l'architecture et les designs patterns principaux.
 
-Final, une grosse section consacrée à la sécurité de l'application :
+Pour le backend, j'ai choisi 8 librairies complémentaires qui recouvrent la sécurité, la gestion de données, la simplification de code. Côté frontend, j'ai opté pour 2 librairies, Angular Material pour l'interface utilisateur, et RxJS pour gérer les opérations asynchrones.
 
-J'ai utilisé Spring Security, pour générer JWT.
-Chaque endpoint de l'application nécessite une authentification via JWT (JSON Web Token) pour garantir que seules les requêtes authentifiées puissent accéder aux ressources protégées.
+Finalement j'ai aussi noté les outils que l'on a utilisé pour la gestion de version.
 
-Spring security est également utilisé pour crypter les mots de passe des utilisateurs, à l’aide de l’algorithme BCrypt avant d'être stockés dans la base de données. Cela permet de protéger les informations sensibles contre toute compromission.
+Ces choix technologiques ont été faits pour optimiser le développement, assurer la performance de l'application et faciliter sa maintenance future.
 
-Ensuite, j'ai utilisé java-dotenv pour protéger les informations sensibles pour l’application elle-même. Elles sont stockées de manière sécurisée dans le fichier .env, qui est exclu du suivi Git et chiffré pour éviter tout risque d'exposition.
-
-Ces mesures permettent d’assurer une sécurité renforcée pour les utilisateurs et l’application dans son ensemble.
+## 3. Démonstration du code
+1. Registration de user
+2. abonnement de thème
+3. désabonnement de thème
+4. modification du profil
+5. consultation d'article
+6. ajout de commentaire
+7. ajout d'article
 
 ## 4.  analyse du code
-1. Configuration
+Les contrôleurs gèrent les points d’entrée de l’application via les API REST.
 
-Le dossier configuration contient tous les fichiers de configuration essentiels pour le bon fonctionnement de l’application :
+Les services représentent la logique métier principale de l’application.
 
-Configuration de la sécurité : inclut la mise en place de Spring Security, avec la gestion des tokens JWT pour l'authentification et l'autorisation.
+Les repositories gèrent l'accès aux données et les opérations dans la base de données.
 
-Configuration de l’API documentation : paramètre Swagger pour générer automatiquement la documentation de l’API via Springdoc OpenAPI.
-
-2. Types : Entités et DTO
-
-Il regroupe les éléments de données de l’application :
-
-Entities : qui représentent les tables de la base de données. Chaque entité correspond à une table, donc essentiellement User, Rental, Message. Elle définissent les attributs qui seront stockés dans MySQL et permettent à Spring Data JPA de faire le mapping entre les objets Java et les enregistrements en base de données.
-
-DTO (Data Transfer Objects) : les DTO sont utilisés pour transférer les données entre les différentes couches de l’application. Ils permettent de contrôler les données envoyées et reçues par les contrôleurs en ne transmettant que les informations nécessaires, ce qui est essentiel pour la sécurité et la performance.
-
-3. Services : Controllers, Repositories, Services
-
-La dernière section regroupe les controllers, repositories, et services, qui ensemble forment la couche métier de l’application :
-
-Controllers : Les contrôleurs définissent les endpoints de l’API et traitent les requêtes provenant du front-end. Par exemple, RentalController gère les requêtes liées aux locations, AuthController gère l’authentification et l’inscription, etc. Chaque contrôleur utilise les services pour appliquer la logique métier, et retourne les réponses sous forme de DTO.
-
-Repositories : Les repositories, fournis par Spring Data JPA, s'occupent de la communication avec la base de données. Ils permettent des opérations CRUD simplifiées et d'accéder aux données sans écrire de code SQL explicite. Par exemple, UserRepository permet de récupérer des utilisateurs par leurs attributs, comme le nom d’utilisateur ou l’ID.
-
-Services : Les services contiennent la logique métier de l’application. Ils agissent comme une couche intermédiaire entre les contrôleurs et les repositories. Par exemple, AuthService gère l'authentification, génère les tokens JWT et valide les informations de connexion, tandis que RentalService gère les opérations sur les locations, comme la création, la modification, et la consultation de données.
-
-Présentation de la documentation:
-ReadME
-+ swagger UI
 
 ## Conclusion
 Bonnes pratiques appliquées :
 
 J’ai pris soin de sécuriser les routes et de protéger les données sensibles des utilisateurs ainsi que celles de l’application.
 
-J’ai utilisé des DTO (Data Transfer Objects) pour mieux gérer les échanges de données entre les différentes couches de l’application.
+J’ai respecté les principes solid, qui ont permis de créer un code modulaire, facilement maintenable et extensible, en accordant une attention particulière à la responsabilité unique des classes.
 
 Pour garantir une gestion rigoureuse des modifications, j’ai travaillé avec des branches distinctes et des pull requests avant d’intégrer les changements dans la branche principale.
 
 J’ai utilisé différents codes de statut HTTP afin d'indiquer clairement les erreurs et les résultats des requêtes, améliorant ainsi la gestion des réponses.
 
-Enfin, la documentation a été une priorité : j’ai utilisé OpenAPI pour documenter les API et ajouté un fichier Markdown dans le répertoire GitHub pour décrire l’ensemble de l’application.
+Enfin, la documentation a été une priorité : j’ai rempli le document pour les techniques, utilisé OpenAPI pour documenter les API et ajouté un fichier Markdown dans le répertoire GitHub pour décrire l’ensemble de l’application.
 
-
-Actuellement, les méthodes disponibles sont assez basiques. Il serait intéressant d’étendre l’application avec de nouvelles fonctionnalités, telles que la possibilité de supprimer une location, de consulter les messages et, potentiellement, de supprimer un compte.
-
-De plus, bien que l'inscription se fasse pour l'instant uniquement via l’adresse email et le mot de passe, l’application étant déjà compatible avec OAuth2, une intégration avec des services d’authentification tiers comme Google ou Meta pourrait être ajoutée à l’avenir pour offrir plus de flexibilité.
+Si la version MVP du Monde de Dév est satisfaisante, tous ces gestes-là faciliteront le futur developpement de cette application.
