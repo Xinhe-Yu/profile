@@ -78,13 +78,13 @@ Les repositories gèrent l'accès aux données et les opérations dans la base d
 ## Conclusion
 Bonnes pratiques appliquées :
 
-J’ai pris soin de sécuriser les routes et de protéger les données sensibles des utilisateurs ainsi que celles de l’application.
+J’ai pris soin de sécuriser les connexions API et de protéger les données sensibles des utilisateurs ainsi que celles de l’application.
 
 J’ai respecté les principes solid, qui ont permis de créer un code modulaire, facilement maintenable et extensible, en accordant une attention particulière à la responsabilité unique des classes.
 
 Pour garantir une gestion rigoureuse des modifications, j’ai travaillé avec des branches distinctes et des pull requests avant d’intégrer les changements dans la branche principale.
 
-J’ai utilisé différents codes de statut HTTP afin d'indiquer clairement les erreurs et les résultats des requêtes, améliorant ainsi la gestion des réponses.
+J’ai amélioré la gestion des réponses API en précisant les erreurs lors de l'échec dans le back, et indiqué clairement le résultat d'une demande d'utilisateur dans le front.
 
 Enfin, la documentation a été une priorité : j’ai rempli le document pour les techniques, utilisé OpenAPI pour documenter les API et ajouté un fichier Markdown dans le répertoire GitHub pour décrire l’ensemble de l’application.
 
