@@ -2,6 +2,8 @@
 
 Aujourd'hui, j'ai le plaisir de vous présenter une application full-stack que j'ai développée pour Orion : Monde de dév (MDD), un réseau social vise à faciliter les connexions et la collaboration entre les développeurs.
 
++page
+
 Ma présentation sera structurée en quatre parties principales :
 1. je vous expliquerai ma compréhension du projet ;
 2. je parlerai des technologies et des bibliothèques que j'ai utilisées pour le développement.
@@ -21,7 +23,8 @@ Une des principales exigences était la séparation entre le back et le front. C
 
 Les frameworks principaux ont été imposés dès le début du projet :
 Backend : JAVA avec le framework Spring
-Utilisation privilégiée des librairies natives de Spring pour assurer une cohérence et une performance optimale
+Il faut privilégiée des librairies natives de Spring. pour assurer une cohérence et une performance optimale
+
 Frontend : TypeScript avec le framework Angular
 
 L'utilisation de Git et GitHub était obligatoire pour la gestion du code source.
@@ -32,7 +35,7 @@ Ces contraintes techniques ont été intégrées dès la phase de conception du 
 
 Les fonctionnalités demandées pour le forum se répartissent en trois grands domaines.
 
-Commençons par la gestion des utilisateurs, qui comprend les fonctions essentielles d'inscription, de connexion et de déconnexion. Une fois connectés, les utilisateurs peuvent consulter et modifier leur profil.
+D'abord il s'agit de la gestion des utilisateurs, qui comprend les fonctions essentielles d'inscription, de connexion et de déconnexion. Une fois connectés, les utilisateurs peuvent consulter et modifier leur profil.
 
 Passons maintenant à la gestion des abonnements. Les utilisateurs ont la possibilité de consulter tous les thèmes disponibles sur le forum. Ils peuvent ensuite s'abonner ou se désabonner des thèmes depuis les pages dédiées.
 
@@ -52,7 +55,7 @@ Au total, j'ai documenté les deux frameworks principaux imposé, en expliquant 
 
 J'ai expliqué les choix que j'ai faits pour l'architecture et les designs patterns principaux.
 
-Pour le backend, j'ai choisi 8 librairies complémentaires qui recouvrent la sécurité, la gestion de données, la simplification de code. Côté frontend, j'ai opté pour 2 librairies, Angular Material pour l'interface utilisateur, et RxJS pour gérer les opérations asynchrones.
+Pour le backend, j'ai choisi 8 librairies complémentaires qui recouvrent la sécurité, la gestion de données, la simplification de code et pour la documentation des APIs. Côté frontend, j'ai opté pour 2 librairies, Angular Material pour l'interface utilisateur, et RxJS pour gérer les opérations asynchrones.
 
 Finalement j'ai aussi noté les outils que l'on a utilisé pour la gestion de version.
 
@@ -89,3 +92,5 @@ J’ai amélioré la gestion des réponses API en précisant les erreurs lors de
 Enfin, la documentation a été une priorité : j’ai rempli le document pour les techniques, utilisé OpenAPI pour documenter les API et ajouté un fichier Markdown dans le répertoire GitHub pour décrire l’ensemble de l’application.
 
 Si la version MVP du Monde de Dév est satisfaisante, tous ces gestes-là faciliteront le futur developpement de cette application.
+
+valerebourgeois@gmail.com
