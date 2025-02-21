@@ -161,10 +161,15 @@ width:200px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    padding: 64px 64px 0; /* Maintain padding in print */
   }
 
   body {
     margin: 0;
     padding: 0;
+  }
+
+  .page > h1 {
+    position: relative;
   }
 }
