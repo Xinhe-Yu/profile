@@ -89,6 +89,9 @@ De plus, nous allons veiller à respecter les exigences du RGPD. Cela comprend l
 
 Enfin, nous allons concevoir l'application en tenant compte de l'accessibilité pour tous les utilisateurs. Nous suivrons les normes courantes (WCAG et RGAA) pour garantir la compatibilité avec les technologies d'assistance, proposer des contrastes suffisants et faciliter la navigation au clavier.
 
+WCAG : Web Content Accessibility Guidelines
+RGAA : Référentiel général d'amélioration de l'accessibilité (rédigé par la direction interministérielle du numérique)
+
 ## 9. conclusion
 
 En résumé, cette refonte complète de l'application LiVrai permettra de moderniser votre infrastructure, de renforcer la sécurité de vos données et d'améliorer l'expérience utilisateur pour vos clients et vos équipes. L'implémentation de ces recommandations fournira à LiVrai une plateforme moderne, robuste et évolutive pour soutenir sa croissance future. Nous vous remercions pour votre attention.
