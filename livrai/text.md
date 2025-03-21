@@ -19,9 +19,9 @@ Deuxièmement, le partage d'une interface unique et de droits d'accès identique
 Ces limitations soulignent la nécessité d'une refonte de l'application pour mieux répondre aux besoins actuels de LiVrai et soutenir sa croissance future.
 
 ## 3. Architecture Technique
-Au niveau de l'architecture, l'application existante de LiVrai suit un modèle classique : MVC (Modèle-Vue-Contrôleur) basé sur une architecture Java EE à trois niveaux.
+Au niveau de l'architecture, l'application existante de LiVrai suit un modèle classique : MVC (Modèle-Vue-Contrôleur) basé sur une architecture Java EE (Entreprise Edition) à trois niveaux.
 
-Le frontend, ou la couche de présentation, utilise des JavaServer Pages (JSP) avec la bibliothèque JSTL (version 1.2) pour générer dynamiquement les pages HTML, complétées par du CSS pour le style.
+Le frontend, ou la couche de présentation, utilise des JSP (JavaServer Pages) avec la bibliothèque JSTL (JavaServer Pages Standard Tag, version 1.2) pour générer dynamiquement les pages HTML, complétées par du CSS pour le style.
 
 Le backend, ou la couche métier, est développé en Java (version 1.6) et utilise des servlets (version 3.0.1) comme contrôleurs pour gérer les requêtes entrantes et orchestrer les interactions entre la vue et le modèle.
 
@@ -83,7 +83,7 @@ Au-delà de ces composants principaux, nous mettrons en place des outils périph
 
 La sécurité, la conformité réglementaire et l'accessibilité sont des priorités absolues dans ce projet.
 
-Pour garantir la sécurité de l'application, nous allons mettre en œuvre Spring Security, un framework robuste qui offre une authentification et une autorisation solides. Cela permettra de protéger les endpoints API et de restreindre l'accès aux données sensibles. Nous allons également implémenter des mesures de protection contre les injections SQL, XSS et autres vulnérabilités courantes.
+Pour garantir la sécurité de l'application, nous allons mettre en œuvre Spring Security, un framework robuste qui offre une authentification et une autorisation solides. Cela permettra de protéger les endpoints API et de restreindre l'accès aux données sensibles. Nous allons également implémenter des mesures de protection contre les injections SQL, XSS (Cross-site Scripting) et autres vulnérabilités courantes.
 
 De plus, nous allons veiller à respecter les exigences du RGPD. Cela comprend la mise en place d'un système de consentement explicite pour la collecte des données personnelles, ainsi que des fonctionnalités permettant aux utilisateurs d'accéder, de modifier et de supprimer leurs données.
 
@@ -94,4 +94,4 @@ RGAA : Référentiel général d'amélioration de l'accessibilité (rédigé par
 
 ## 9. conclusion
 
-En résumé, cette refonte complète de l'application LiVrai permettra de moderniser votre infrastructure, de renforcer la sécurité de vos données et d'améliorer l'expérience utilisateur pour vos clients et vos équipes. L'implémentation de ces recommandations fournira à LiVrai une plateforme moderne, robuste et évolutive pour soutenir sa croissance future. Nous vous remercions pour votre attention.
+En résumé, cette refonte complète de l'application LiVrai permettra de moderniser votre infrastructure, de renforcer la sécurité de vos données et d'améliorer l'expérience utilisateur pour vos clients et vos équipes. L'implémentation de ces recommandations fournira à LiVrai une plateforme moderne, robuste et évolutive pour soutenir sa croissance future. Nous vous remercions pour votre attention.💻
