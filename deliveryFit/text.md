@@ -16,7 +16,7 @@ Premièrement, optimiser votre chaîne logistique en identifiant le point d'exp�
 
 Deuxièmement, réduire significativement les délais de livraison, ce qui améliorera directement la satisfaction de vos clients.
 
-Troisièmement, diminuer vos coûts de transport grâce à des trajets plus courts et mieux optimisés.
+Troisièmement, diminuer vos coûts de transport grâce à des trajets plus courts et mieux optimisés, ainsi que l’empreinte carbone.
 
 Tout ceci doit s'intégrer de manière transparente à votre plateforme e-commerce existante, sans perturber l'expérience d'achat de vos clients. L'application interviendra au moment critique de la validation du panier pour déterminer le meilleur point d'expédition, avant de rediriger l'utilisateur vers le processus de paiement habituel.
 
@@ -31,7 +31,7 @@ Il gèrera également la vérification des stocks en temps réel et le système 
 
 Le Front-End, développé avec Angular, sera responsable de l'expérience utilisateur. Il interceptera le processus d'achat au moment de la validation du panier, affichera une interface pendant la recherche du point d'expédition optimal, puis présentera les informations de livraison avant de rediriger l'utilisateur vers le site original. Tout cela de manière fluide et transparente, sans perturber le parcours d'achat habituel.
 
-Les tâches d'intégration permettront la communication harmonieuse entre DeliveryFit et votre plateforme  existante.
+Les tâches d'intégration permettront la communication harmonieuse entre DeliveryFit et votre plateforme existante.
 
 Les phases de tests et de déploiement garantiront quant à elles la fiabilité et la performance de l'application en conditions réelles d'utilisation.
 
@@ -87,7 +87,7 @@ Ces objectifs de performance ne sont pas de simples promesses, mais des engageme
 ## 8. Contre proposition
 Au-delà de la solution de base qui répond parfaitement à vos exigences, nous avons identifié des opportunités stratégiques pour transformer DeliveryFit d'un simple outil d'optimisation logistique en un véritable levier de croissance pour votre entreprise.
 
-Parlons d'abord de l'expérience client enrichie. Nous savons tous que la satisfaction client est au cœur de votre succès. Avec cette fonctionnalité, vos clients pourront choisir entre plusieurs options de livraison - standard, express, ou click & collect. Ils seraient aussi informés automatiquement à chaque étape clé de leur livraison, en choississant leur canal de notification préféré, que ce soit par email, SMS ou via l'application mobile.
+Parlons d'abord de l'expérience client enrichie. Nous savons tous que la satisfaction client est au cœur de votre succès. Avec cette fonctionnalité, vos clients pourront choisir entre plusieurs options de livraison - standard, express, ou click & collect. Ils seraient aussi informés automatiquement à chaque étape clé de leur livraison, en choississant leur canal de notification préféré, que ce soit par email ou SMS.
 
 Passons maintenant à l'analyse de données et aux tableaux de bord. C'est là que vos données se transforment en décisions éclairées. Vous aurez accès à des tableaux de bord intuitifs qui vous permettront de suivre en temps réel vos KPIs logistiques essentiels. Vous pourrez analyser les tendances de livraison pour repérer les opportunités d'optimisation. Et grâce à des visualisations interactives, vous évaluerez facilement les performances par région, magasin et produit.
 
@@ -115,7 +115,7 @@ Nous vous avons présenté aujourd'hui deux propositions solides :
 
 Notre proposition initiale à 8 900 € répond parfaitement à votre cahier des charges, tout en restant sous le budget maximal défini. Elle vous permettra d'optimiser vos livraisons en identifiant automatiquement le point d'expédition le plus proche du client.
 
-Notre proposition enrichie à 12 600 € va au-delà de vos exigences initiales en intégrant une expérience client enrichie et des outils d'analyse de données puissants. Bien qu'elle dépasse le budget initial, elle constitue un investissement stratégique avec un retour sur investissement tangible.
+Notre proposition enrichie à 12 600 € va au-delà de vos exigences initiales en intégrant une expérience client enrichie et des outils d'analyse de données puissants. Bien qu'elle dépasse le budget initial, elle constitue un investissement stratégique avec un retour tangible.
 
 Quelle que soit l'option que vous choisirez, notre équipe d'experts s'engage à livrer une solution performante, fiable et évolutive dans le délai imparti de 5 mois. Notre méthodologie Agile nous permettra de vous impliquer tout au long du projet et d'adapter notre approche selon vos retours.
 

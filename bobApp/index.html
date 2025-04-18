@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../css/diapo.css">
+  <style>
+    td {
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    section>table {
+      background-color: #FFF6E9;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 75%;
+      margin: auto;
+      font-size: 0.6em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scroll-container">
+    <section>
+      <div class="page page-without-box" style="grid-template-columns: 5fr;">
+
+        <h1 style="font-size:3rem"><i class="fa-solid fa-bullseye" style="color:#80C4E9;"></i> BobApp</h1>
+        <h2 style="font-size:3rem;font-family: 'Bebas Neue', sans-serif;padding-left:64px">
+        </h2>
+        <p style="border: 4px solid #80C4E9;padding:16px;border-radius: 16px;text-align: center;">
+          Présentée par Xinhe YU
+          <br>
+          le 18 avril 2025
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="page" style="grid-template-columns: 5fr;">
+        <h1><i class="fa-solid fa-bullseye"></i> BobApp</h1>
+        <ol>
+          <li>Contexte du projet et objectifs principaux</li>
+          <li>Pipeline CI/CD</li>
+          <li>Résultat SonarCloud</li>
+          <li>Analyse des avis utilisateurs</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="page" style="grid-template-columns: 5fr;">
+        <h1><i class="fa-solid fa-bullseye"></i> Partie I : Contexte et Objectifs</h1>
+        <ul>
+          <li><strong>Contexte</strong></li>
+          <ul>
+            <li>- Bob débordé, process manuel</li>
+            <li>- Bugs non corrigés, utilisateurs mécontents</li>
+          </ul>
+          <li><strong>Objectifs</strong>
+            <ul>
+              <li>- automatiser, fiabiliser, et faciliter la contribution</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="page" style="grid-template-columns: 5fr;">
+        <h1><i class="fa-solid fa-bullseye"></i> Partie II : Aperçu du workflow CI/CD</h1>
+        <ul>
+          <li><strong>Déclencheurs :</strong>
+            <ul>
+              <li><code>push</code> sur <code>main</code></li>
+              <li><code>pull_request</code> vers <code>main</code></li>
+              <li><code>workflow_dispatch</code> pour déclenchement manuel</li>
+            </ul>
+          </li>
+          <li><strong>Étapes principales du pipeline :</strong>
+            <ul>
+              <li>Tests (backend & frontend)</li>
+              <li>Analyse qualité (SonarCloud)</li>
+              <li>Build Docker + Push vers Docker Hub</li>
+            </ul>
+          </li>
+          <br>
+          <li>⚠️ Build & push Docker seulement après merge sur <code>main</code></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="page" style="grid-template-columns: 5fr;">
+        <h1><i class="fa-solid fa-vial-circle-check"></i> Étape 1 : Tests automatiques</h1>
+        <ul>
+          <li><strong>Backend :</strong>
+            <ul>
+              <li>Tests avec JUnit</li>
+              <li>Couverture avec JaCoCo</li>
+            </ul>
+          </li>
+          <li><strong>Frontend :</strong>
+            <ul>
+              <li>Tests avec Karma (Angular)</li>
+              <li>Couverture générée avec Karma coverage</li>
+            </ul>
+          </li>
+          <br>
+          <li>📄 Rapports publiés sur GitHub Pages (via <code>peaceiris/actions-gh-pages@v4</code>)</li>
+          <li>🔁 Stockage des rapports pour analyse qualité plus tard</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="page" style="grid-template-columns: 5fr;">
+        <h1><i class="fa-solid fa-microscope"></i> Étape 2 : Analyse qualité (SonarCloud)</h1>
+        <ul>
+          <li>Analyse séparée <strong>backend</strong> et <strong>frontend</strong></li>
+          <li>Utilisation des rapports de couverture (tests précédents)</li>
+          <li>Contrôle de qualité basé sur :</li>
+          <ul>
+            <li>- Sécurité</li>
+            <li>- Maintenabilité</li>
+            <li>- Bugs critiques ou duplications ? → PR bloquée</li>
+          </ul>
+          <br>
+          <li>🚦 Quality Gate = Feu vert/rouge sur la qualité du code</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="page" style="grid-template-columns: 5fr;">
+        <h1><i class="fa-brands fa-docker"></i> Étape 3 : Build et Docker Hub</h1>
+        <ul>
+          <li><strong>Backend et Frontend buildés séparément</strong></li>
+          <li>Authentification Docker dans GitHub Actions</li>
+          <li>Images créées avec <code>docker build</code></li>
+          <li><strong>Push automatique vers Docker Hub</strong></li>
+          <li><strong>Conditions :</strong>
+            <ul>
+              <li>- Tests passés</li>
+              <li>- Analyse Sonar validée</li>
+              <li>- Action déclenchée par un <code>push</code> sur <code>main</code></li>
+            </ul>
+          </li>
+          <br>
+          <li>💡 Possibilité future : déploiement auto sur serveur via SSH</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <h1><i class="fa-solid fa-person-chalkboard"></i> PARTIE III : <span class="rainbow">Résultat Sonar</span></h1>
+        <ul class="solution">
+          <li>Back-End
+          </li>
+          <div style="padding:12px"></div>
+          <li>Front-End
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <h1><i class="fa-solid fa-traffic-light"></i> Quality Gates & KPI</h1>
+        <p><strong>🟢 Quality Gate :</strong> système de validation automatique</p>
+        <table border='1'>
+          <thead>
+            <tr>
+              <th>Indicateur</th>
+              <th>Seuil</th>
+              <th>Pourquoi c’est important</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Couverture du nouveau code</td>
+              <td>≥ 80%</td>
+              <td>Pour s’assurer que chaque nouvelle fonctionnalité est bien testée</td>
+            </tr>
+            <tr>
+              <td>New Blocker Issues</td>
+              <td>= 0</td>
+              <td>Zéro bug critique introduit, on veut pas casser le site</td>
+            </tr>
+            <tr>
+              <td>Duplication (new code)</td>
+              <td>≤ 3%</td>
+              <td>Évite le copier-coller et garde le code propre et facile à maintenir</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <h1><i class="fa-solid fa-bullseye"></i> Partie IV : Retours utilisateurs</h1>
+        <ul>
+          <li><span style="color:#FF7F3E">"Impossible de poster une suggestion de blague, le bouton tourne et fait
+              planter mon navigateur"</span> → manque de tests backend + gestion d’erreur + tests E2E</li>
+          <li><span style="color:#FF7F3E">"J’ai remonté un bug sur le post de vidéo il y a deux semaines et il est
+              encore présent"</span> → pas de tests de non-régression + pas de suivi clair des bugs</li>
+          <li><span style="color:#FF7F3E">"Ça fait une semaine que je ne reçois plus rien, j’ai envoyé un email il y a 5
+              jours mais toujours pas de nouvelles…"</span> → manque de logs/monitoring ou simple malentendu ➜ besoin de
+            messages explicites</li>
+        </ul>
+        <p><strong>💡 Objectif :</strong> rendre l’app plus robuste, compréhensible et transparente pour les
+          utilisateurs (et les contributeurs)</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <h1><i class="fa-solid fa-chart-line"></i> Pistes d’amélioration</h1>
+        <ul>
+          <li><strong>1. Renforcer la robustesse fonctionnelle</strong>
+            <ul>
+              <li>- Couverture backend trop faible (38%) ➜ viser les 80%</li>
+              <li>- Ajouter des tests end-to-end (envoi de blague, affichage...)</li>
+            </ul>
+          </li>
+
+          <li><strong>2. Améliorer la gestion des retours utilisateurs</strong>
+            <ul>
+              <li>- Utiliser les issues GitHub pour suivre les bugs</li>
+            </ul>
+          </li>
+
+          <li><strong>3. Suivre les indicateurs qualité</strong>
+            <ul>
+              <li>- Corriger les bugs critiques détectés par SonarCloud</li>
+              <li>- Valider régulièrement les security hotspots</li>
+            </ul>
+          </li>
+
+          <li><strong>4. Renforcer l’architecture et la stabilité</strong>
+            <ul>
+              <li>- Ajouter des messages d’erreur ou d’état explicites dans l’UI</li>
+              <li>- Ajouter des logs ou alertes côté backend</li>
+              <li>- Gérer les environnements (dev, test, prod) avec des configs propres</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="page">
+        <h1><i class="fa-solid fa-mug-hot"></i> Conclusion</h1>
+        <ul>
+          <li>- Une pipeline CI/CD opérationnelle et automatisée</li>
+          <li>- Qualité du code analysée à chaque PR</li>
+          <li>- Images Docker prêtes à l’emploi</li>
+          <li>- Et une roadmap claire pour fiabiliser l’app côté utilisateurs</li>
+          <br>
+          <p><strong>🚀 Prochaine étape :</strong> améliorer la couverture backend, ajouter les tests E2E, suivre les
+            retours utilisateurs, et peut-être... accueillir de nouveaux contributeurs</p>
+        </ul>
+      </div>
+    </section>
+
+
+  </div>
+</body>
+
+</html>
