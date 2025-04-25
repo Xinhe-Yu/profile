@@ -8,7 +8,7 @@ D’abord je te remets un peu dans le contexte, même si tu le vis tous les jour
 
 Ensuite, on plonge dans le cœur du sujet : la pipeline CI/CD que j’ai mise en place avec GitHub Actions ; on verra comment tout s’enchaîne automatiquement, les tests, la qualité du code, le build, etc.
 
-Troisièment, on prendra le temps de regarder ensemble les résultats dans SonarCloud, et les images générées sur Docker Hub.
+Troisièment, on prendra le temps de regarder ensemble les résultats dans SonarCloud.
 
 Et enfin, on fera un point sur les retours des utilisateurs — pas toujours tendres — et les pistes d’amélioration pour la suite.
 
@@ -16,7 +16,7 @@ Allons-y !
 
 ## 2. Contexte et Objectifs
 
-Bon, on part d’une situation qu’on connaît bien : tu développes sur ton temps libre, tu passes ton temps à corriger des bugs, valider des pull requests, faire des déploiements en FTP (aie), et pendant ce temps les utilisateurs râlent. Bref : galère.
+Bon, on part d’une situation qu’on connaît bien : tu développes sur le temps libre, tu passes ton temps à corriger des bugs, valider des pull requests, faire des déploiements en FTP (aie), et pendant ce temps les utilisateurs râlent. Bref : galère.
 
 Et comme c’est open source mais sans onboarding clair ni automatisation, y’a pas vraiment de gens qui viennent filer un coup de main.
 
@@ -87,7 +87,7 @@ Allez, on continue le pipeline. Une fois que les tests sont passés et que l’a
 
 "Et en plus, le workflow est bien verrouillé : le build Docker ne se lance que si tout ce qui précède a réussi. Donc tu pousses jamais une image pétée par erreur."
 
-Regarde ici sur Docker Hub, tu vois les deux images avec le tag latest, générées automatiquement après merge. Et on pourrait même aller plus loin, genre déploiement direct sur un serveur, ou en staging si t’en as besoin.
+Regarde ici sur Docker Hub, tu vois les deux images, générées automatiquement après merge. Et on pourrait même aller plus loin, genre déploiement direct sur un serveur si t’en as besoin.
 
 
 ## 7. Résultat Sonar-Backend
@@ -97,7 +97,7 @@ OK, maintenant que le pipeline est terminé, on va voir ce que Sonar nous racont
 
 → 💻 Tu ouvres SonarCloud pour afficher le projet backend
 
-"Regarde : côté sécurité, c’est nickel. Aucune vulnérabilité, donc pas de faille ouverte, pas de package bizarre. Et niveau maintenabilité, c’est aussi très bon : 11 petits code smells, mineurs, qu’on pourra corriger tranquillement."
+"Regarde : côté sécurité, c’est nickel. Aucune vulnérabilité, donc pas de faille ouverte, pas de package bizarre. Et niveau maintenabilité, c’est aussi très bon : quelques petits code smells, mineurs, qu’on pourra corriger tranquillement."
 
 "Pas de duplication non plus — ce qui veut dire que ton code est bien factorisé, pas du tout en mode copier-coller sauvage.
 
