@@ -29,7 +29,7 @@ Ensuite, c'est la priorité métier, en lien avec les besoins exprimés par les 
 
 bien sûr, la charge estimée est prise en compte, puisque la capacité de l’équipe pour ce sprint était de 15 Story Points ;
 
-Et enfin, il reste un point important : la mobilisation équilibrée de toute l’équipe — j’ai veillé à ce que le sprint engage les compétences du front, du back et de l’UX design, pour que chacun ait un rôle actif dans l’avancement collectif.
+Et enfin, il reste un point important : la mobilisation de toute l’équipe — j’ai veillé à ce que le sprint engage les compétences du front, du back et de l’UX design, pour que chacun ait un rôle actif dans l’avancement collectif.
 
 Au final, j’ai retenu 5 User Stories, pour un total de 15 points :
 
@@ -37,7 +37,7 @@ US 2 : Trouver une bibliothèque JavaScript libre de cartographie (5 SP)
 → Cette tâche technique engage directement Dimitry, notre développeur front, et pose les bases pour toutes les visualisations cartographiques à venir.
 
 US 4 : Afficher les différents niveaux de hauteur d’eau sur une carte (3 SP)
-→ Travail partagé entre le front-end et l’UX, avec une contribution de Jorge pour la clarté de l’affichage et la lisibilité des calques sur carte.
+→ Travail partagé entre le front-end et l’UX (avec une contribution de Jorge pour la clarté de l’affichage et la lisibilité des calques sur carte).
 
 US 6 : Vérification d’une inondation précédente (3 SP)
 → Mise en œuvre principalement côté back-end, avec des appels API et une logique métier claire.
@@ -59,13 +59,13 @@ la conformité RGPD et ITIL, que nous avons intégrée dès la phase de concepti
 ## Conformité RGPD et ITIL
 Car il a été essentiel d’assurer la conformité réglementaire et la qualité de l’environnement technique.
 
-En Concernant le RGPD, Le projet CATASTERRE manipule essentiellement des données géographiques, mais pas de données personnelles au sens strict.
+En Concernant le RGPD, le projet CATASTERRE manipule principalement des données géographiques, mais traite aussi des données personnelles techniques liées aux comptes utilisateurs, ce qui impose une attention particulière à la sécurité et à la confidentialité de ces informations.
 
-Néanmoins, j’ai veillé à respecter plusieurs principes clés du RGPD dans les User Stories sélectionnées :
+Par conséquent, j’ai veillé à respecter plusieurs principes clés du RGPD dans les User Stories sélectionnées :
 
 Chaque rapport de risques généré par l’application est transmis à un notaire dans un objectif légal clair, qui est d’informer le client final de manière transparente.
 
-Nous ne collectons aucune donnée personnelle : seuls les éléments géographiques nécessaires à l’étude du bien (parcelle, zone à risque…) sont utilisés.
+Nous ne collectons aucune donnée personnelle pour les études de risques : seuls les éléments géographiques nécessaires à l’étude du bien (parcelle, zone à risque…) sont utilisés.
 
 Toutes les API, notamment celles utilisées pour afficher les hauteurs d’eau ou vérifier un historique d’inondation, sont sécurisées avec Spring Security et JWT. Cela garantit une protection complète des échanges.
 
@@ -73,7 +73,7 @@ Les données ne sont pas stockées durablement. Les rapports sont générés à 
 
 Nous avons prévu, dans le backlog, une fonctionnalité qui permet à l’utilisateur — notaire ou client — de demander l’anonymisation ou la suppression d’un rapport.
 
-L’accès à certaines requêtes sensibles, comme l’historique d’inondation, nécessite une validation explicite du notaire avant traitement.
+Certaines requêtes, comme l’historique d’inondation d’un bien, peuvent avoir des impacts juridiques ou financiers. L’application requiert donc une validation explicite du notaire, pour garantir la transparence et la responsabilité de l’usage.
 
 ⚙️Ensuite, pour le Côté ITIL, plusieurs bonnes pratiques ont été appliquées pour structurer le projet sur des bases solides :
 
@@ -98,9 +98,11 @@ Dès le début du sprint, un point bloquant a été identifié par notre dévelo
 
 "Nous ne pouvons pas développer et tester en même temps par manque de compétences en test automatisé."
 
-J’ai donc construit un plan d’action pour améliorer la collaboration au quotidien et initier une culture de la qualité partagée.
+Ce constat met en évidence une fragilité au sein de l’équipe, non pas en termes de volonté, mais en termes de maîtrise technique, de coordination, et de partage des connaissances autour des tests.
 
-D’abord, il s’agit de renforcer la coopération dans l’équipe, en s’appuyant sur des leviers simples, adaptés à notre contexte.
+Plutôt que de chercher une solution uniquement individuelle ou technique, j’ai donc construit un plan d’action collectif qui répond à cette difficulté sous l’angle de la coopération et de la montée en compétence progressive.
+
+// L’objectif est de réduire la dépendance à un seul profil ou à un rôle spécifique, et de favoriser une dynamique d’équipe plus fluide et plus autonome face aux enjeux de qualité.
 
 Première initiative : nous allons mettre en place des binômes de suivi par User Story.
 Chaque développeur reste bien dans sa spécialité — front ou back — mais travaille en binôme avec un autre membre de l’équipe, qui va relire les tests, challenger les cas d’usage, et aider à clarifier les critères métier.
@@ -134,10 +136,10 @@ Cette matrice nous permet de visualiser immédiatement les écarts à combler po
 Pour éviter que cette matrice reste figée, j’ai proposé d’utiliser SkillTree, un outil open source qui permet de suivre l’évolution des compétences au fil des sprints, de visualiser les progrès de chacun, et de structurer la montée en qualité de façon transparente.
 
 
-En plus, j’ai sélectionné 3 formations ciblées pour répondre au le point bloquant identifié par notre membre d'équipe :
+En plus, j’ai sélectionné 3 formations ciblées pour répondre au point bloquant identifié par Rachida :
 
 Testing Java avec JUnit 5, Mockito et REST Assured (Udemy – 11h – 19,99 €)
-pour automatiser les tests back sur API et microservices.
+pour automatiser les tests back sur API.
 
 Angular Testing Course (Angular University – 5h – Gratuit)
 pour maîtriser les tests unitaires et d’intégration côté front.
@@ -145,7 +147,7 @@ pour maîtriser les tests unitaires et d’intégration côté front.
 L’essentiel de Selenium (LinkedIn Learning – 3h – via abonnement ~39,66 €)
 pour les tests end-to-end.
 
-Avec cette approche structurée, on sort de la logique “le QA gère tout” pour aller vers une équipe autonome sur la qualité, où chacun contribue selon ses forces — et progresse là où c’est nécessaire.
+Avec cette approche structurée, on peut aller vers une équipe autonome sur la qualité, où chacun contribue selon ses forces — et progresse là où c’est nécessaire.
 
 
 ## Fiche de poste QA Engineer
@@ -166,7 +168,7 @@ Et bien sûr, il participera pleinement à la vie de l’équipe agile, notammen
 🛠️ Côté missions opérationnelles :
 Ce poste couvre aussi bien les tests techniques que les pratiques d’équipe :
 
-Il rédigera les cas de test critiques sur Angular et Spring Boot.
+Il rédigera les cas de test critiques (sur Angular et Spring Boot).
 
 Il aidera l’équipe à adopter une démarche TDD concrète, et validera les livrables Docker selon des critères clairs (zéro erreur critique, couverture > 75%).
 
@@ -192,3 +194,13 @@ Et enfin, pour aller plus loin dans la stratégie qualité, j’ai formalisé un
 Ce premier sprint pose donc des bases solides : on avance concrètement sur le produit, tout en structurant l’équipe pour livrer durablement un logiciel fiable, sécurisé, et conforme à son usage métier.
 
 Merci pour votre attention, je suis disponible pour vos questions ou remarques.
+
+
+
+//
+
+Ce constat met en évidence une fragilité au sein de l’équipe, non pas en termes de volonté, mais en termes de maîtrise technique, de coordination, et de partage des connaissances autour des tests.
+
+Plutôt que de chercher une solution uniquement individuelle ou technique, j’ai donc construit un plan d’action collectif qui répond à cette difficulté sous l’angle de la coopération et de la montée en compétence progressive.
+
+L’objectif est de réduire la dépendance à un seul profil ou à un rôle spécifique, et de favoriser une dynamique d’équipe plus fluide et plus autonome face aux enjeux de qualité
