@@ -1,8 +1,8 @@
 ## 1. Introduction
 
-Bonjour, aujoud'hui j'ai le plaisir de vous présenter le travail réalisé autour de la fiabilité, la sécurité et la continuité de la nouvelle version de l’application MaisonEnPlace, plateforme web destinée à la vente de mobilier et de décoration via un simulateur de réalité augmentée.
+Bonjour, aujoud'hui j'ai le plaisir de te présenter le travail réalisé autour de la fiabilité, la sécurité et la continuité de la nouvelle version de l’application MaisonEnPlace, plateforme web destinée à la vente de mobilier et de décoration via un simulateur de réalité augmentée.
 
-Comme vous le savez, la version 1 de l’application a été développée rapidement dans une logique de POC (proof of concept), avec peu de tests, une sécurité perfectible, et une architecture centralisée.
+Comme nous le savons, la version 1 de l’application a été développée rapidement dans une logique de POC (proof of concept), avec peu de tests, une sécurité perfectible, et une architecture centralisée.
 
 Avec la version 2, notre objectif est clair : proposer une expérience robuste, sécurisée et durable pour nos utilisateurs.
 
@@ -61,7 +61,7 @@ En effet, un comportement correct ne suffit pas si l’application est vulnérab
 
 C’est pourquoi je propose de passer à la seconde partie, dédiée à la sécurité de l’application, avec une analyse des principaux risques identifiés et des solutions concrètes pour s’en prémunir, et de protéger l’application et ses utilisateurs contre les menaces les plus critiques.
 
-Cette partie repose sur une analyse des vulnérabilités constatées dans la version 1, ainsi que sur une identification des nouveaux risques liés à la version 2.
+Cette partie repose sur une analyse des vulnérabilités constatées dans la version 1, ainsi que sur une identification des risques liés à la version 2.
 Chaque risque est évalué en fonction de sa gravité, puis associé à des mesures concrètes pour le réduire.
 
 L’un des risques majeurs concerne l’infrastructure elle-même.
@@ -71,7 +71,7 @@ La solution, ici, consiste à migrer vers une infrastructure cloud scalable, à 
 
 Un autre risque important est la transmission non sécurisée des données.
 Certaines API de la version 1 utilisaient encore le protocole HTTP, ce qui expose les échanges à des attaques de type man-in-the-middle, notamment au moment de l’authentification.
-Le plan prévoit donc de forcer l’utilisation du protocole HTTPS, avec des certificats SSL/TLS à renouvellement automatique — comme Let’s Encrypt — et d’ajouter des tests automatisés pour s’assurer que tous les échanges sont sécurisés.
+Le plan prévoit donc de forcer l’utilisation du protocole HTTPS, avec des certificats SSL/TLS à renouvellement automatique — (comme Let’s Encrypt) — et d’ajouter des tests automatisés pour s’assurer que tous les échanges sont sécurisés.
 
 Sur le plan de l’authentification, la version 1 utilisait encore l’algorithme MD5 pour le hachage des mots de passe — ce qui est aujourd’hui considéré comme vulnérable.
 Pour y remédier, on préconise le passage à bcrypt ou Argon2, qui sont bien plus robustes, l’introduction de règles de complexité sur les mots de passe, et la mise en place d’un système de verrouillage temporaire après plusieurs tentatives échouées.
@@ -84,7 +84,7 @@ Enfin, l’application étant fortement basée sur des entrées utilisateur — 
 La prévention passe par l’usage d’un ORM sécurisé avec requêtes préparées, et par une validation systématique des entrées, côté client comme côté serveur.
 
 ✔️ En résumé, ce plan de sécurité couvre à la fois les faiblesses héritées de la version 1 et les menaces spécifiques à la version 2.
-Les mesures proposées sont concrètes, réalistes et alignées sur les bonnes pratiques du secteur.
+Les mesures proposées sont concrètes et alignées sur les bonnes pratiques du secteur.
 L’objectif est clair : protéger les utilisateurs, les données, et garantir la stabilité de l’application en production.
 
 ## 4. Plan de sauvegarde
@@ -114,7 +114,7 @@ Côté solutions techniques, on s’appuie sur des services cloud managés :
 
 Les bases de données utilisent des solutions comme AWS RDS ou GCP Cloud SQL, qui assurent les snapshots journaliers, la restauration à un point dans le temps, et la sécurité des accès.
 
-Les fichiers médias sont stockés dans des buckets cloud avec versioning activé et réplication automatique.
+Les fichiers médias sont stockés dans des buckets cloud avec versionnage activé et réplication automatique.
 
 L’infrastructure prévoit également une redondance géographique, avec une instance miroir prête à prendre le relais, et un load balancer pour répartir la charge ou rediriger le trafic en cas d’incident.
 
